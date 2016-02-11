@@ -1,0 +1,7 @@
+copymri_plusping.sh
+copymri.sh
+do_srcspc_setup.csh
+do_subj_unpack.csh
+do_wma_fsrecon.csh
+fsreconnoaseg.csh
+make_images.sh

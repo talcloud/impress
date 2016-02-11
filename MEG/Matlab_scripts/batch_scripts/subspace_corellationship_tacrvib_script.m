@@ -1,0 +1,149 @@
+%% Global Variables
+
+    %  Necessary for functions
+
+cfg.protocol='tacr';
+% .Ave file for ERM
+cfg.covdir = ('/cluster/transcend/scripts/MEG/descriptors/cov_descriptors/from_calvin_001_marvin');
+% .Ave file for Protocol
+% cfg.protocol_covdir = ('/space/sondre/2/users/meg/wmm');
+cfg.protocol_covdir=('/cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001');
+% Data Directory
+cfg.data_rootdir=('/cluster/transcend/MEG/tacr_new');
+%cfg.data_rootdir=('/autofs/space/amiga_001/users/meg/tacr_new');
+% ERM Directory
+% cfg.erm_rootdir=('/autofs/cluster/transcend/manfred/erm');
+cfg.erm_rootdir=('/autofs/space/amiga_001/users/meg/erm1');
+
+% For calc/forward inverse
+cfg.setMRIdir=('/space/sondre/1/users/mri/mit/recon');
+addpath('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/');
+
+
+
+
+%% Tacr vib
+ subject={ '018301';
+     '010401';
+     '010001';
+
+'017801';
+
+
+
+
+'041901';
+'042201';
+'042301';
+'015402';
+'015601';
+'051301';
+'009101';
+'012002';
+
+
+
+'pilotei';
+
+
+
+'007501';
+'013001';
+'038301';
+'038502';
+'040701';
+'042401';
+
+'051901';
+
+
+'AC003';
+
+
+
+
+'AC023';
+
+'AC046';
+'AC047';
+'AC056';
+
+'AC053';
+'AC058';
+'AC061';
+
+'ac047';
+
+'AC067';
+
+
+'AC054';
+
+'AC064';
+
+'AC068';
+'AC013';
+'AC071';
+
+'AC070';
+'AC072';
+'AC073';
+'AC075';
+
+'AC0066';
+
+
+'AC076';
+'AC077';'AC042';'AC069';'014002';'018301';'014901';'012301';'014001';'AC050';'AC063';'AC065';'043202';'012301';'002901';'050901'};
+
+visitNo=[ones(44,1);2;2;2;2;2;2;2;2;1;3;2;1];
+counter=1;
+        erm_run=ones(52,1);
+        % runs of the data to be processed. If different for different subjects, can be a matrix
+         % If multiple dimensions, must match length(cfg.amp_sub_folders)
+        run=ones(70,1);
+        
+        
+    for i=38:length(subject),
+  
+    
+    try
+    fprintf('Processing single subject %s\n',subject{i});
+
+cfg.protocol='tacr';
+% .Ave file for ERM
+cfg.covdir = ('/cluster/transcend/scripts/MEG/descriptors/cov_descriptors/from_calvin_001_marvin');
+% .Ave file for Protocol
+% cfg.protocol_covdir = ('/space/sondre/2/users/meg/wmm');
+cfg.protocol_covdir=('/cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001');
+% Data Directory
+cfg.data_rootdir=('/cluster/transcend/MEG/tacr_new');
+%cfg.data_rootdir=('/autofs/space/amiga_001/users/meg/tacr_new');
+% ERM Directory
+% cfg.erm_rootdir=('/autofs/cluster/transcend/manfred/erm');
+cfg.erm_rootdir=('/autofs/space/amiga_001/users/meg/erm1');
+
+data_subjdir=[cfg.data_rootdir '/' subject{i} '/' num2str(visitNo(i)) '/'];
+cd(data_subjdir)
+
+% For calc/forward inverse
+cfg.setMRIdir=('/space/sondre/1/users/mri/mit/recon');
+addpath('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/');
+
+
+filename=strcat(subject{i},'_do_calc_inverse_cfg.mat');
+load(filename)
+cfg.data_rootdir=('/cluster/transcend/MEG/tacr_new');
+[cfg]=do_mne_subspace_correlationship(subj,visitNo,cfg);
+clear('visitNo')
+visitNo=[ones(44,1);2;2;2;2;2;2;2;2;1;3;2;1];
+
+    catch
+    fprintf('Subject Failed ! %s\n',subject{i});
+%     failed_subjects{counter,1}= subject{i};   
+%     counter=counter+1;
+    end
+   
+    end
+     
+        

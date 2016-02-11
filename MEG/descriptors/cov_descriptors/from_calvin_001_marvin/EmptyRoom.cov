@@ -1,0 +1,54 @@
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"Empty Room"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         erm.fif
+#	logfile         EmptyRoom
+#	eventfile	MN.eve
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	stimIgnore      10e-3
+	gradReject	2000e-13
+	magReject	4-12
+#	eogReject	8e-6
+#
+#	Additional rejection parameters
+#
+#	eegReject   	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	def {
+#
+#		The name of the category (condition) is irrelevant 
+#		but useful as a comment
+#
+#		'event' can be left out to compute covariance matrix 
+#		from continuous data
+#
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+
+		tmin	   0     
+		tmax	1000
+#
+#		Baseline settings is strongly recommended
+#		(does not have to be the same as 'tmin' and 'tmax')
+	}
+
+
+
+}

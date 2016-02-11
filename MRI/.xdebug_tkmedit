@@ -1,0 +1,7 @@
+tkmedit started: Wed Dec  9 14:14:25 2015
+
+	/usr/local/freesurfer/stable5_3_0/tktools/tkmedit.bin 013703_rescan T1.mgz 
+
+$Id: tkmedit.c,v 1.343 2011/03/01 01:41:22 nicks Exp $ $Name: stable5 $
+Set user home dir to /autofs/cluster/transcend/scripts/MRI
+Set subject home dir to /autofs/cluster/transcend/MRI/WMA/recons/013703_rescan

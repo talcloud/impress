@@ -1,0 +1,246 @@
+
+function [cfg]=saccades_epoching(subj,cfg) 
+
+addpath('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/Private_epochMEG/')
+addpath('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts');
+cfg.protocol='emo1';
+cfg.epochMEG_time(1)=-1.1;
+cfg.epochMEG_time(2)=1.1;
+cfg.data_rootdir='/autofs/cluster/transcend/sheraz/emo1/';
+cfg.epochMEG_baseline=[];
+run=3;
+s=warning('off','all')
+directory= strcat('/autofs/cluster/transcend/sheraz/emo1/',subj);
+
+cd (directory);
+
+for irun=1:3
+
+new_in_fif_File=strcat(subj,'_emo1_',num2str(irun),'_sss.fif');
+
+[fiffsetup] = fiff_setup_read_raw(new_in_fif_File);
+
+   %% Geting EOG Channel
+channelNames = fiffsetup.info.ch_names;
+ch_EOG = strmatch('EOG',channelNames)
+
+fprintf(1,'\n EOG channel index for this subject is: %d \n',ch_EOG)
+
+
+if isempty(ch_EOG)
+  
+ch_EOG1 = strmatch('EEG 061',channelNames);
+ch_EOG2 = strmatch('EEG 062',channelNames);
+ch_EOG=[ch_EOG1 ch_EOG2];
+
+end
+
+if isempty(ch_EOG)
+ 
+ error('EEG 61 or EEG 62 channel not found !!')
+  
+end
+
+fprintf(1,'\n EOG channel index for this subject is: %d \n',ch_EOG)
+
+sampRate = fiffsetup.info.sfreq;
+
+start_samp = fiffsetup.first_samp;
+end_samp = fiffsetup.last_samp;
+[eog] = fiff_read_raw_segment(fiffsetup, start_samp ,end_samp, ch_EOG);
+
+fprintf(1,'\n Filtering the data to remove DC offset to help distinguish blinks from saccades \n')
+
+filteog = eegfilt(eog, sampRate,2,[]); % filtering to remove dc ofset so that we know which is blink and saccade.
+temp=sqrt(sum(filteog.^2,2));
+[~, indexmax ]=max(temp);
+clear temp temp1 
+
+% temporary. remove after emo1 saccade detection
+
+
+eog(indexmax,:)=[];
+
+if irun==1
+    if indexmax==2
+        index=1;
+    else
+        index=2;
+        
+    end
+    
+    
+ eog1=ch_EOG(index);
+ 
+elseif irun==2,
+    
+    if indexmax==2
+        index=1;
+    else
+        index=2;
+        
+    end
+     
+ eog2=ch_EOG(index);
+ 
+else
+        
+    if indexmax==2
+        index=1;
+    else
+        index=2;
+        
+    end
+ eog3=ch_EOG(index);
+end
+
+end
+%-----------------------------------------------
+if ~isfield(cfg,'data_rootdir'),
+ display('Please enter a root directory in sub-structure cfg.rootdir: Thank you');
+end
+
+if ~isfield(cfg,'protocol'),
+ display('Please enter a protocol name in sub-structure cfg.protocol: Thank you');
+end
+
+if isempty(cfg.epochMEG_time(1)||cfg.epochMEG_time(2)),
+ display('Please enter a tmin & tmax value in sub-structure cfg.epochMEG_time: Thank you');
+end
+
+
+%% epoching
+
+           
+    for cond=1:4               
+        for irun=1:3,
+    
+if irun==1
+    
+    
+ eogenter=eog1;
+ 
+elseif irun==2,
+        
+ eogenter=eog2;
+ 
+else
+    
+ eogenter=eog3;
+end
+    
+        
+
+                fileData=strcat(cfg.data_rootdir,'/', subj,'/', subj,'_',cfg.protocol,'_',num2str(irun),'_144fil_raw.fif');
+                A=exist(fileData);
+                 
+                eventfile=strcat(cfg.data_rootdir,'/', subj,'/', subj,'_',cfg.protocol,'_',num2str(irun),'_ecgClean_raw-eve.fif');
+               
+                B=exist(eventfile);
+      
+                  
+                goodtrialLog=strcat(cfg.data_rootdir,'/', subj,'/', subj,'_',cfg.protocol,'_',num2str(irun),'_ecgClean-144fil-ave.log'); 
+ 
+                    
+
+              C=exist(goodtrialLog);
+                
+              if (A+B+C~=6)
+                 fprintf(' One of the input files doesnt exist, skipping the run');
+     
+                  continue
+          
+              end   
+        
+              
+             %   [data,cfg.times,cfg.epoch_ch_names] = mne_read_epochs(fileData,cfg.epochMEG_event_order(cond),eventfile,cfg.epochMEG_time(1),cfg.epochMEG_time(2));
+
+[data,cfg.times,cfg.epoch_ch_names] = mne_read_epochs_saccades(fileData,cond,eventfile,cfg.epochMEG_time(1),cfg.epochMEG_time(2),eogenter);
+
+
+
+                            if ~isempty(cfg.epochMEG_baseline)&& isfield(cfg,'implement_baseline_correction'),
+        
+                                fprintf(' Implementing baseline correction: bmin  %d to bmax %d\n', cfg.epochMEG_baseline(1),cfg.epochMEG_baseline(2));
+
+                                first_sample=find(cfg.times  >=cfg.epochMEG_baseline(1),1,'first');
+                                zero_sample=find(cfg.times  >=cfg.epochMEG_baseline(2),1,'first');
+
+                                data=permute(data,[3 1 2]);
+                                data_mean=mean(data(:,:,first_sample:zero_sample),3);
+                                data_mean=repmat(data_mean,[1 1 size(data,3)]);
+                                data=(data-data_mean);
+                                data=permute(data,[2 3 1]);
+                                clear data_mean zero_sample
+            
+                            else
+                            fprintf(' Not implementing baseline correction');
+
+                            end
+
+                                        % [indexGoodTrial indexBadTrial ratioGoodTrials]=findGoodTrial(goodtrialLog,event(cond));
+                                        if ~isfield(cfg,'epochMEG_merge_events')     
+                                        [cfg.indgood{irun},cfg.indbad_EOG{irun},cfg.indbad_MEG{irun}] = parsemneavelog_enhanced(goodtrialLog,cond);
+                                        else
+                                        [cfg.indgood{irun},cfg.indbad_EOG{irun},cfg.indbad_MEG{irun}] = parsemneavelog_merge_events(goodtrialLog,cfg.epochMEG_event_order(cond));
+                                        end
+                                        
+                                   
+                                                if (run-irun~=run-1)
+                                                   index=max(cfg.indgood{irun-1});
+                                                   Z=isempty(index);
+                                                   if(Z==0)
+                                                   cfg.indgood{irun}=index+cfg.indgood{irun};
+                                                   cfg.indbad_EOG{irun}=index+cfg.indbad_EOG{irun};
+                                                   cfg.indbad_MEG{irun}=index+cfg.indbad_MEG{irun};
+                                                   end
+                                                   
+                                                   if irun>1,
+                                                        indexmain=max(cfg.indgood{1});
+                                                        X=isempty(indexmain);
+                                                        if(X==0)
+                                                   cfg.indgood{irun}=indexmain+cfg.indgood{irun};
+                                                   cfg.indbad_EOG{irun}=indexmain+cfg.indbad_EOG{irun};
+                                                   cfg.indbad_MEG{irun}=indexmain+cfg.indbad_MEG{irun};
+                                                        end
+                                                   end
+                                                end
+                                     
+                                            
+                                            
+                                            
+                                            good_epochs.data_run{irun}=cfg.indgood{irun};
+           
+                                            all_epochs.data_run{irun}=data(:,:,:);
+                                           
+                                           
+
+              cfg.ratioGoodTrials(irun)=length(cfg.indgood{irun})/(length(cfg.indgood{irun})+length(cfg.indbad_EOG{irun}+length(cfg.indbad_MEG{irun})));      
+              
+cd(cfg.data_rootdir);
+A=exist('epochMEG_saccades','dir');
+if A~=7
+   mkdir('epochMEG') 
+end
+if size(good_epochs)~=0,
+ good_epochs=cat(2,good_epochs.data_run{1,:});
+ all_epochs=cat(3,all_epochs.data_run{1,:});
+else
+ good_epochs=0;
+ all_epochs=0;
+end
+
+
+                  save(strcat(cfg.data_rootdir,'epochMEG_saccades','/',subj,'_',cfg.protocol,'_cond_',num2str(cond),'_run_',num2str(irun),'_ecgClean-144fil_epochs.mat'),'run','cond','good_epochs','all_epochs','cfg','goodtrialLog','eventfile');
+    
+        end
+
+
+         
+   end
+
+
+
+
+
+

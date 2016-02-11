@@ -1,0 +1,55 @@
+% output_matrix=zeros(46,2,2,781);
+% newertimes=zeros(1,1,1,781);
+% leftdata=zeros(1,1,1,781);
+% rightdata=zeros(1,1,1,781);
+
+%index=[3;4;5;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;31;43];
+index=[15;18;19;23;24;25;26;27;28;31;33;34;37;38;40;42;44];
+counter=1;
+
+%protocol={'fmm';'fmmn'};
+for i=1:length(index)
+
+ %if i==index(counter)    
+    
+    for r=1:2
+        
+% load(strcat('/cluster/transcend/sheraz/data/fmm/',common_subjects{i,1},'-',protocol{r},'-labrep.mat'),'labrep_pac_rh','labrep_pac_lh','times');
+% 
+% leftdata=zeros(1,1,1,781);
+% rightdata=zeros(1,1,1,781);
+
+% if i==1
+% alltimes=zeros(1,1,1,781);
+% alltimes(:,:,:,1:781)=times;
+% output_matrix(46,1,1,1:781)=alltimes;
+% end
+
+% 
+% templeft=mean(labrep_pac_lh,1);
+% templeft=mean(templeft,3);
+% templeft=squeeze(templeft);
+% leftdata(:,:,:,1:781)=templeft(1:781);
+% 
+% 
+% tempright=mean(labrep_pac_rh,1);
+% tempright=mean(tempright,3);
+% tempright=squeeze(tempright);
+% rightdata(:,:,:,1:781)=tempright(1:781);
+
+%output_matrix(index(i),r,1,:)=copytemp(index(i),r,1,:)*-1;
+output_matrix(index(i),r,2,:)=copytemp(index(i),r,2,:)*-1;
+counter=counter+1;
+
+%clear alltimes templeft tempright leftdata right data times
+
+    end
+    
+ %else
+ %    continue
+% end
+
+end
+
+%save(strcat('/cluster/transcend/sheraz/data/fmm/concatenated-labrep.mat'),'output_matrix','common_subjects');
+

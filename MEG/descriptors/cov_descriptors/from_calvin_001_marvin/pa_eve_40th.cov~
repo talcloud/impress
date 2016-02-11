@@ -1,0 +1,354 @@
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"cov for event analysis"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         058501_noisecov_eve.fif
+#	logfile         noisecov_eve
+#	eventfile	058501_fmm_1_0.1_144fil_raw-eve.fif
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+#	logfile          erm-ave.log
+	gradReject	1500e-13
+#	magReject	3e-12
+#	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	500e-15
+#
+#	Additional rejection parameters
+#
+#	eegReject   	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	def {
+#
+#		The name of the category (condition) is irrelevant 
+#		but useful as a comment
+
+                name	"Standard10"
+
+#		'event' can be left out to compute covariance matrix 
+#		from continuous data
+
+                event  10
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+
+		tmin	 -0.1     
+		tmax	 0.6
+                bmin     -0.1
+                bmax     0
+        } 
+	def {
+
+                name	"Standard11"
+
+                event  11
+
+		tmin	 -0.1     
+		tmax	 0.6
+                bmin     -0.1
+                bmax     0
+        } 
+
+	def{
+
+		name	"Deviant23"
+
+		event	23
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant24"
+
+		event	24
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant25"
+
+		event	25
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant26"
+
+		event	26
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant27"
+
+		event	27
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant33"
+
+		event	33
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant34"
+
+		event	34
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant35"
+
+		event	35
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant36"
+
+		event	36
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant37"
+
+		event	37
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant43"
+
+		event	43
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant44"
+
+		event	44
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant45"
+
+		event	45
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant46"
+
+		event	46
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant47"
+
+		event	47
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant53"
+
+		event	53
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant54"
+
+		event	54
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant55"
+
+		event	55
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant56"
+
+		event	56
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"Deviant57"
+
+		event	57
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control70"
+
+		event	70
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control71"
+
+		event	71
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control72"
+
+		event	72
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control73"
+
+		event	73
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control74"
+
+		event	74
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control75"
+
+		event	75
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+}

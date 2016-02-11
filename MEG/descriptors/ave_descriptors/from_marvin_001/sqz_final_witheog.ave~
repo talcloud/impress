@@ -1,0 +1,143 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         01_ns_fmm_offlave.fif
+#	logfile         01_ns_fmm.log
+#	eventfile	mismatch1.eve
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile         sqz_visual-ave.log
+	gradReject	1650e-13
+	magReject	3.5e-12
+	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"fixation cross"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	1
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.8
+		tmax	2.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    0.2
+		bmax    0.6
+	}
+
+
+category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"SQZ_trigger_carrot"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	2
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -2.2
+		tmax	1.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -2.2
+		bmax    -1.8
+	}
+
+category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"SQZ_emg_on"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	501
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -2.2
+		tmax	1.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -2.2
+		bmax    -1.8
+	}
+
+category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"SQZ_emg_off"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	502
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -2.2
+		tmax	1.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -2.2
+		bmax    -1.8
+	}
+
+}

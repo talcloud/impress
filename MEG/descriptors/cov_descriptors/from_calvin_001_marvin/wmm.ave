@@ -1,0 +1,86 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile          wmm-ave.log
+	gradReject	1400e-13
+	magReject	4e-12
+	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+#	emgReject?
+#
+#	Additional rejection parameters
+#
+	eegReject   300e-6
+
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"STANDARD"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	1
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.4
+		tmax	1.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.2
+		bmax    -0.02
+	}
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"DEVIANT"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	2
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.4
+		tmax	1.2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.2
+		bmax    -0.02
+	}
+}
+

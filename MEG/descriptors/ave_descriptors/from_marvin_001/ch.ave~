@@ -1,0 +1,215 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile          facesonly-ave.log
+	logfile          emo1-ave.log
+	gradReject	1200e-13
+	magReject	2e-12
+	#eogReject	220e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+#	emgReject?
+#
+#	Additional rejection parameters
+#
+#	eegReject?
+
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12288"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12288
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12289"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12289
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12288"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12288
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12290"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12290
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12292"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12292
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"12296"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	12296
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.1
+		tmax	0.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    -0.01
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

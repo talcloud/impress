@@ -1,0 +1,647 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+# java.lang.OutOfMemoryError: requested 131072 bytes for E in /BUILD_AREA/jdk6_12/hotspot/src/share/vm/utilities/taskqueue.hpp. Out of swap space?
+#
+#  Internal Error (allocation.inline.hpp:42), pid=25255, tid=1090992448
+#  Error: E in /BUILD_AREA/jdk6_12/hotspot/src/share/vm/utilities/taskqueue.hpp
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.2-b01 mixed mode linux-amd64)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000008091000):  JavaThread "Unknown thread" [_thread_in_vm, id=25674, stack(0x00000000408a3000,0x0000000041074000)]
+
+Stack: [0x00000000408a3000,0x0000000041074000],  sp=0x00000000410722d0,  free space=7996k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x5fc16f]
+V  [libjvm.so+0x26e1c8]
+V  [libjvm.so+0x529327]
+V  [libjvm.so+0x52879e]
+V  [libjvm.so+0x4f2f1f]
+V  [libjvm.so+0x5d86c2]
+V  [libjvm.so+0x2f4945]
+V  [libjvm.so+0x5c1b47]
+V  [libjvm.so+0x349910]
+C  [libmwjmi.so+0x2df9d]  _Z9InitSunVMv+0x75d
+C  [libmwjmi.so+0x2e64b]
+C  [libmwjmi.so+0x1a695]  _Z7mljInitv+0x15
+C  [libmwmcr.so+0x2c15e]
+C  [libmwmcr.so+0x1e374]
+C  [libmwmcr.so+0x1e5df]
+C  [MATLAB+0x405c]
+C  [MATLAB+0x2c73]
+C  [libmwmcr.so+0x4ceec]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000008091000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=25674, stack(0x00000000408a3000,0x0000000041074000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 14336K, used 245K [0x00002aaac04c0000, 0x00002aaac14c0000, 0x00002aaac35c0000)
+  eden space 12288K, 2% used [0x00002aaac04c0000,0x00002aaac04fd720,0x00002aaac10c0000)
+  from space 2048K, 0% used [0x00002aaac12c0000,0x00002aaac12c0000,0x00002aaac14c0000)
+  to   space 2048K, 0% used [0x00002aaac10c0000,0x00002aaac10c0000,0x00002aaac12c0000)
+ PSOldGen        total 49152K, used 0K [0x00002aaab71c0000, 0x00002aaaba1c0000, 0x00002aaac04c0000)
+  object space 49152K, 0% used [0x00002aaab71c0000,0x00002aaab71c0000,0x00002aaaba1c0000)
+ PSPermGen       total 21248K, used 666K [0x00002aaaaf1c0000, 0x00002aaab0680000, 0x00002aaab71c0000)
+  object space 21248K, 3% used [0x00002aaaaf1c0000,0x00002aaaaf266af0,0x00002aaab0680000)
+
+Dynamic libraries:
+00400000-00406000 r-xp 00000000 00:1c 4226801                            /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/MATLAB
+00606000-00607000 rw-p 00006000 00:1c 4226801                            /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/MATLAB
+07f72000-08194000 rw-p 07f72000 00:00 0                                  [heap]
+40053000-40054000 ---p 40053000 00:00 0 
+40054000-40254000 rwxp 40054000 00:00 0 
+408a3000-408a6000 ---p 408a3000 00:00 0 
+408a6000-41074000 rwxp 408a6000 00:00 0 
+41074000-41075000 ---p 41074000 00:00 0 
+41075000-41275000 rwxp 41075000 00:00 0 
+41275000-41276000 ---p 41275000 00:00 0 
+41276000-41476000 rwxp 41276000 00:00 0 
+41476000-41477000 ---p 41476000 00:00 0 
+41477000-41677000 rwxp 41477000 00:00 0 
+41677000-41678000 ---p 41677000 00:00 0 
+41678000-41778000 rwxp 41678000 00:00 0 
+41778000-41779000 ---p 41778000 00:00 0 
+41779000-41879000 rwxp 41779000 00:00 0 
+41879000-4187a000 ---p 41879000 00:00 0 
+4187a000-4197a000 rwxp 4187a000 00:00 0 
+4197a000-4197b000 ---p 4197a000 00:00 0 
+4197b000-41a7b000 rwxp 4197b000 00:00 0 
+41a94000-41a95000 ---p 41a94000 00:00 0 
+41a95000-41b95000 rwxp 41a95000 00:00 0 
+41b95000-41b96000 ---p 41b95000 00:00 0 
+41b96000-41c96000 rwxp 41b96000 00:00 0 
+41c96000-41c97000 ---p 41c96000 00:00 0 
+41c97000-41d97000 rwxp 41c97000 00:00 0 
+41f79000-41f7a000 ---p 41f79000 00:00 0 
+41f7a000-4207a000 rwxp 41f7a000 00:00 0 
+4207a000-4207b000 ---p 4207a000 00:00 0 
+4207b000-4217b000 rwxp 4207b000 00:00 0 
+4217b000-4217c000 ---p 4217b000 00:00 0 
+4217c000-4227c000 rwxp 4217c000 00:00 0 
+4227c000-4227d000 ---p 4227c000 00:00 0 
+4227d000-4237d000 rwxp 4227d000 00:00 0 
+4237d000-4237e000 ---p 4237d000 00:00 0 
+4237e000-4247e000 rwxp 4237e000 00:00 0 
+4247e000-4247f000 ---p 4247e000 00:00 0 
+4247f000-4257f000 rwxp 4247f000 00:00 0 
+4257f000-42580000 ---p 4257f000 00:00 0 
+42580000-42680000 rwxp 42580000 00:00 0 
+42680000-42681000 ---p 42680000 00:00 0 
+42681000-42781000 rwxp 42681000 00:00 0 
+42781000-42782000 ---p 42781000 00:00 0 
+42782000-42882000 rwxp 42782000 00:00 0 
+42882000-42883000 ---p 42882000 00:00 0 
+42883000-42983000 rwxp 42883000 00:00 0 
+42983000-42984000 ---p 42983000 00:00 0 
+42984000-42a84000 rwxp 42984000 00:00 0 
+42a84000-42a85000 ---p 42a84000 00:00 0 
+42a85000-42b85000 rwxp 42a85000 00:00 0 
+42b85000-42b86000 ---p 42b85000 00:00 0 
+42b86000-42c86000 rwxp 42b86000 00:00 0 
+42c86000-42c87000 ---p 42c86000 00:00 0 
+42c87000-42d87000 rwxp 42c87000 00:00 0 
+42d87000-42d88000 ---p 42d87000 00:00 0 
+42d88000-42e88000 rwxp 42d88000 00:00 0 
+42e88000-42e89000 ---p 42e88000 00:00 0 
+42e89000-42f89000 rwxp 42e89000 00:00 0 
+42f89000-42f8a000 ---p 42f89000 00:00 0 
+42f8a000-4308a000 rwxp 42f8a000 00:00 0 
+4308a000-4308b000 ---p 4308a000 00:00 0 
+4308b000-4318b000 rwxp 4308b000 00:00 0 
+4318b000-4318c000 ---p 4318b000 00:00 0 
+4318c000-4328c000 rwxp 4318c000 00:00 0 
+4328c000-4328d000 ---p 4328c000 00:00 0 
+4328d000-4338d000 rwxp 4328d000 00:00 0 
+4338d000-4338e000 ---p 4338d000 00:00 0 
+4338e000-4348e000 rwxp 4338e000 00:00 0 
+4348e000-4348f000 ---p 4348e000 00:00 0 
+4348f000-4358f000 rwxp 4348f000 00:00 0 
+4358f000-43590000 ---p 4358f000 00:00 0 
+43590000-43690000 rwxp 43590000 00:00 0 
+43690000-43691000 ---p 43690000 00:00 0 
+43691000-43791000 rwxp 43691000 00:00 0 
+43791000-43792000 ---p 43791000 00:00 0 
+43792000-43892000 rwxp 43792000 00:00 0 
+43892000-43893000 ---p 43892000 00:00 0 
+43893000-43993000 rwxp 43893000 00:00 0 
+43993000-43994000 ---p 43993000 00:00 0 
+43994000-43a94000 rwxp 43994000 00:00 0 
+43a94000-43a95000 ---p 43a94000 00:00 0 
+43a95000-43b95000 rwxp 43a95000 00:00 0 
+43b95000-43b96000 ---p 43b95000 00:00 0 
+43b96000-43c96000 rwxp 43b96000 00:00 0 
+43c96000-43c97000 ---p 43c96000 00:00 0 
+43c97000-43d97000 rwxp 43c97000 00:00 0 
+43d97000-43d98000 ---p 43d97000 00:00 0 
+43d98000-43e98000 rwxp 43d98000 00:00 0 
+43e98000-43e99000 ---p 43e98000 00:00 0 
+43e99000-43f99000 rwxp 43e99000 00:00 0 
+43f99000-43f9a000 ---p 43f99000 00:00 0 
+43f9a000-4409a000 rwxp 43f9a000 00:00 0 
+4409a000-4409b000 ---p 4409a000 00:00 0 
+4409b000-4419b000 rwxp 4409b000 00:00 0 
+4419b000-4419c000 ---p 4419b000 00:00 0 
+4419c000-4429c000 rwxp 4419c000 00:00 0 
+4429c000-4429d000 ---p 4429c000 00:00 0 
+4429d000-4439d000 rwxp 4429d000 00:00 0 
+4439d000-4439e000 ---p 4439d000 00:00 0 
+4439e000-4449e000 rwxp 4439e000 00:00 0 
+4449e000-4449f000 ---p 4449e000 00:00 0 
+4449f000-4459f000 rwxp 4449f000 00:00 0 
+4459f000-445a0000 ---p 4459f000 00:00 0 
+445a0000-446a0000 rwxp 445a0000 00:00 0 
+446a0000-446a1000 ---p 446a0000 00:00 0 
+446a1000-447a1000 rwxp 446a1000 00:00 0 
+447a1000-447a2000 ---p 447a1000 00:00 0 
+447a2000-448a2000 rwxp 447a2000 00:00 0 
+448a2000-448a3000 ---p 448a2000 00:00 0 
+448a3000-449a3000 rwxp 448a3000 00:00 0 
+449a3000-449a4000 ---p 449a3000 00:00 0 
+449a4000-44aa4000 rwxp 449a4000 00:00 0 
+44aa4000-44aa5000 ---p 44aa4000 00:00 0 
+44aa5000-44ba5000 rwxp 44aa5000 00:00 0 
+44ba5000-44ba6000 ---p 44ba5000 00:00 0 
+44ba6000-44ca6000 rwxp 44ba6000 00:00 0 
+44ca6000-44ca7000 ---p 44ca6000 00:00 0 
+44ca7000-44da7000 rwxp 44ca7000 00:00 0 
+44da7000-44da8000 ---p 44da7000 00:00 0 
+44da8000-44ea8000 rwxp 44da8000 00:00 0 
+44ea8000-44ea9000 ---p 44ea8000 00:00 0 
+44ea9000-44fa9000 rwxp 44ea9000 00:00 0 
+44fa9000-44faa000 ---p 44fa9000 00:00 0 
+44faa000-450aa000 rwxp 44faa000 00:00 0 
+450aa000-450ab000 ---p 450aa000 00:00 0 
+450ab000-451ab000 rwxp 450ab000 00:00 0 
+451ab000-451ac000 ---p 451ab000 00:00 0 
+451ac000-452ac000 rwxp 451ac000 00:00 0 
+452ac000-452ad000 ---p 452ac000 00:00 0 
+452ad000-453ad000 rwxp 452ad000 00:00 0 
+453ad000-453ae000 ---p 453ad000 00:00 0 
+453ae000-454ae000 rwxp 453ae000 00:00 0 
+454ae000-454af000 ---p 454ae000 00:00 0 
+454af000-455af000 rwxp 454af000 00:00 0 
+455af000-455b0000 ---p 455af000 00:00 0 
+455b0000-456b0000 rwxp 455b0000 00:00 0 
+456b0000-456b1000 ---p 456b0000 00:00 0 
+456b1000-457b1000 rwxp 456b1000 00:00 0 
+457b1000-457b2000 ---p 457b1000 00:00 0 
+457b2000-458b2000 rwxp 457b2000 00:00 0 
+3008800000-300881c000 r-xp 00000000 08:02 1791695                        /lib64/ld-2.5.so
+3008a1b000-3008a1c000 r--p 0001b000 08:02 1791695                        /lib64/ld-2.5.so
+3008a1c000-3008a1d000 rw-p 0001c000 08:02 1791695                        /lib64/ld-2.5.so
+3008c00000-3008d4e000 r-xp 00000000 08:02 1791702                        /lib64/libc-2.5.so
+3008d4e000-3008f4e000 ---p 0014e000 08:02 1791702                        /lib64/libc-2.5.so
+3008f4e000-3008f52000 r--p 0014e000 08:02 1791702                        /lib64/libc-2.5.so
+3008f52000-3008f53000 rw-p 00152000 08:02 1791702                        /lib64/libc-2.5.so
+3008f53000-3008f58000 rw-p 3008f53000 00:00 0 
+3009000000-3009082000 r-xp 00000000 08:02 1791706                        /lib64/libm-2.5.so
+3009082000-3009281000 ---p 00082000 08:02 1791706                        /lib64/libm-2.5.so
+3009281000-3009282000 r--p 00081000 08:02 1791706                        /lib64/libm-2.5.so
+3009282000-3009283000 rw-p 00082000 08:02 1791706                        /lib64/libm-2.5.so
+3009400000-3009402000 r-xp 00000000 08:02 1791710                        /lib64/libdl-2.5.so
+3009402000-3009602000 ---p 00002000 08:02 1791710                        /lib64/libdl-2.5.so
+3009602000-3009603000 r--p 00002000 08:02 1791710                        /lib64/libdl-2.5.so
+3009603000-3009604000 rw-p 00003000 08:02 1791710                        /lib64/libdl-2.5.so
+3009800000-3009816000 r-xp 00000000 08:02 1791901                        /lib64/libpthread-2.5.so
+3009816000-3009a15000 ---p 00016000 08:02 1791901                        /lib64/libpthread-2.5.so
+3009a15000-3009a16000 r--p 00015000 08:02 1791901                        /lib64/libpthread-2.5.so
+3009a16000-3009a17000 rw-p 00016000 08:02 1791901                        /lib64/libpthread-2.5.so
+3009a17000-3009a1b000 rw-p 3009a17000 00:00 0 
+3009c00000-3009c14000 r-xp 00000000 08:02 3495397                        /usr/lib64/libz.so.1.2.3
+3009c14000-3009e13000 ---p 00014000 08:02 3495397                        /usr/lib64/libz.so.1.2.3
+3009e13000-3009e14000 rw-p 00013000 08:02 3495397                        /usr/lib64/libz.so.1.2.3
+300a000000-300a002000 r-xp 00000000 08:02 3497076                        /usr/lib64/libXau.so.6.0.0
+300a002000-300a201000 ---p 00002000 08:02 3497076                        /usr/lib64/libXau.so.6.0.0
+300a201000-300a202000 rw-p 00001000 08:02 3497076                        /usr/lib64/libXau.so.6.0.0
+300a400000-300a505000 r-xp 00000000 08:02 3493140                        /usr/lib64/libX11.so.6.2.0
+300a505000-300a705000 ---p 00105000 08:02 3493140                        /usr/lib64/libX11.so.6.2.0
+300a705000-300a70c000 rw-p 00105000 08:02 3493140                        /usr/lib64/libX11.so.6.2.0
+300a800000-300a805000 r-xp 00000000 08:02 3497162                        /usr/lib64/libXdmcp.so.6.0.0
+300a805000-300aa04000 ---p 00005000 08:02 3497162                        /usr/lib64/libXdmcp.so.6.0.0
+300aa04000-300aa05000 rw-p 00004000 08:02 3497162                        /usr/lib64/libXdmcp.so.6.0.0
+300ac00000-300ac10000 r-xp 00000000 08:02 3498059                        /usr/lib64/libXext.so.6.4.0
+300ac10000-300ae10000 ---p 00010000 08:02 3498059                        /usr/lib64/libXext.so.6.4.0
+300ae10000-300ae11000 rw-p 00010000 08:02 3498059                        /usr/lib64/libXext.so.6.4.0
+300d400000-300d407000 r-xp 00000000 08:02 1791992                        /lib64/librt-2.5.so
+300d407000-300d607000 ---p 00007000 08:02 1791992                        /lib64/librt-2.5.so
+300d607000-300d608000 r--p 00007000 08:02 1791992                        /lib64/librt-2.5.so
+300d608000-300d609000 rw-p 00008000 08:02 1791992                        /lib64/librt-2.5.so
+300dc00000-300dc17000 r-xp 00000000 08:02 3494444                        /usr/lib64/libICE.so.6.3.0
+300dc17000-300de16000 ---p 00017000 08:02 3494444                        /usr/lib64/libICE.so.6.3.0
+300de16000-300de18000 rw-p 00016000 08:02 3494444                        /usr/lib64/libICE.so.6.3.0
+300de18000-300de1b000 rw-p 300de18000 00:00 0 
+300e000000-300e009000 r-xp 00000000 08:02 3495844                        /usr/lib64/libSM.so.6.0.0
+300e009000-300e209000 ---p 00009000 08:02 3495844                        /usr/lib64/libSM.so.6.0.0
+300e209000-300e20a000 rw-p 00009000 08:02 3495844                        /usr/lib64/libSM.so.6.0.0
+3011e00000-3011e17000 r-xp 00000000 08:02 3493000                        /usr/lib64/libXmu.so.6.2.0
+3011e17000-3012016000 ---p 00017000 08:02 3493000                        /usr/lib64/libXmu.so.6.2.0
+3012016000-3012018000 rw-p 00016000 08:02 3493000                        /usr/lib64/libXmu.so.6.2.0
+3012200000-3012210000 r-xp 00000000 08:02 3497889                        /usr/lib64/libXpm.so.4.11.0
+3012210000-3012410000 ---p 00010000 08:02 3497889                        /usr/lib64/libXpm.so.4.11.0
+3012410000-3012411000 rw-p 00010000 08:02 3497889                        /usr/lib64/libXpm.so.4.11.0
+3013200000-3013215000 r-xp 00000000 08:02 1792015                        /lib64/libnsl-2.5.so
+3013215000-3013414000 ---p 00015000 08:02 1792015                        /lib64/libnsl-2.5.so
+3013414000-3013415000 r--p 00014000 08:02 1792015                        /lib64/libnsl-2.5.so
+3013415000-3013416000 rw-p 00015000 08:02 1792015                        /lib64/libnsl-2.5.so
+3013416000-3013418000 rw-p 3013416000 00:00 0 
+3013a00000-3013a11000 r-xp 00000000 08:02 1791740                        /lib64/libresolv-2.5.so
+3013a11000-3013c11000 ---p 00011000 08:02 1791740                        /lib64/libresolv-2.5.so
+3013c11000-3013c12000 r--p 00011000 08:02 1791740                        /lib64/libresolv-2.5.so
+3013c12000-3013c13000 rw-p 00012000 08:02 1791740                        /lib64/libresolv-2.5.so
+3013c13000-3013c15000 rw-p 3013c13000 00:00 0 
+301be00000-301be4e000 r-xp 00000000 08:02 3501530                        /usr/lib64/libncurses.so.5.5
+301be4e000-301c04e000 ---p 0004e000 08:02 3501530                        /usr/lib64/libncurses.so.5.5
+301c04e000-301c05c000 rw-p 0004e000 08:02 3501530                        /usr/lib64/libncurses.so.5.5
+301c05c000-301c05d000 rw-p 301c05c000 00:00 0 
+301d600000-301d65b000 r-xp 00000000 08:02 3501070                        /usr/lib64/libXt.so.6.0.0
+301d65b000-301d85a000 ---p 0005b000 08:02 3501070                        /usr/lib64/libXt.so.6.0.0
+301d85a000-301d860000 rw-p 0005a000 08:02 3501070                        /usr/lib64/libXt.so.6.0.0
+301d860000-301d861000 rw-p 301d860000 00:00 0 
+2aaaaab2a000-2aaaaab31000 r-xp 00000000 08:02 1791714                    /lib64/libnss_compat-2.5.so
+2aaaaab31000-2aaaaad31000 ---p 00007000 08:02 1791714                    /lib64/libnss_compat-2.5.so
+2aaaaad31000-2aaaaad32000 r--p 00007000 08:02 1791714                    /lib64/libnss_compat-2.5.so
+2aaaaad32000-2aaaaad33000 rw-p 00008000 08:02 1791714                    /lib64/libnss_compat-2.5.so
+2aaaaad5e000-2aaaaad67000 r-xp 00000000 08:02 1791709                    /lib64/libnss_nis-2.5.so
+2aaaaad67000-2aaaaaf67000 ---p 00009000 08:02 1791709                    /lib64/libnss_nis-2.5.so
+2aaaaaf67000-2aaaaaf68000 r--p 00009000 08:02 1791709                    /lib64/libnss_nis-2.5.so
+2aaaaaf68000-2aaaaaf69000 rw-p 0000a000 08:02 1791709                    /lib64/libnss_nis-2.5.so
+2aaaaaf69000-2aaaaaf73000 r-xp 00000000 08:02 1791705                    /lib64/libnss_files-2.5.so
+2aaaaaf73000-2aaaab172000 ---p 0000a000 08:02 1791705                    /lib64/libnss_files-2.5.so
+2aaaab172000-2aaaab173000 r--p 00009000 08:02 1791705                    /lib64/libnss_files-2.5.so
+2aaaab173000-2aaaab174000 rw-p 0000a000 08:02 1791705                    /lib64/libnss_files-2.5.so
+2aaaab174000-2aaaab178000 r-xp 00000000 08:02 1791703                    /lib64/libnss_dns-2.5.so
+2aaaab178000-2aaaab377000 ---p 00004000 08:02 1791703                    /lib64/libnss_dns-2.5.so
+2aaaab377000-2aaaab378000 r--p 00003000 08:02 1791703                    /lib64/libnss_dns-2.5.so
+2aaaab378000-2aaaab379000 rw-p 00004000 08:02 1791703                    /lib64/libnss_dns-2.5.so
+2aaaab379000-2aaaab3a2000 r-xp 00000000 00:1c 5857913                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+2aaaab3a2000-2aaaab4a1000 ---p 00029000 00:1c 5857913                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+2aaaab4a1000-2aaaab4a8000 rw-p 00028000 00:1c 5857913                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+2aaaab4a8000-2aaaabb35000 r-xp 00000000 00:1c 5857940                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+2aaaabb35000-2aaaabc34000 ---p 0068d000 00:1c 5857940                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+2aaaabc34000-2aaaabd85000 rw-p 0068c000 00:1c 5857940                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+2aaaabd85000-2aaaabdc2000 rw-p 2aaaabd85000 00:00 0 
+2aaaabdc2000-2aaaabdcf000 r-xp 00000000 00:1c 5857933                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+2aaaabdcf000-2aaaabece000 ---p 0000d000 00:1c 5857933                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+2aaaabece000-2aaaabed1000 rw-p 0000c000 00:1c 5857933                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+2aaaabed1000-2aaaabed2000 r--p 2aaaabed1000 00:00 0 
+2aaaabed2000-2aaaabed3000 rw-p 2aaaabed2000 00:00 0 
+2aaaabed3000-2aaaabeda000 r-xp 00000000 00:1c 5857938                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+2aaaabeda000-2aaaabfdb000 ---p 00007000 00:1c 5857938                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+2aaaabfdb000-2aaaabfdd000 rw-p 00008000 00:1c 5857938                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+2aaaabfdd000-2aaaabfde000 rw-p 2aaaabfdd000 00:00 0 
+2aaaabfde000-2aaaabfe6000 rw-s 00000000 08:02 4174817                    /tmp/hsperfdata_santosh/25255
+2aaaabfe6000-2aaaabff4000 r-xp 00000000 00:1c 5857934                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+2aaaabff4000-2aaaac0f6000 ---p 0000e000 00:1c 5857934                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+2aaaac0f6000-2aaaac0f9000 rw-p 00010000 00:1c 5857934                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+2aaaac0f9000-2aaaac0fa000 rw-p 2aaaac0f9000 00:00 0 
+2aaaac0fa000-2aaaaf1ba000 rwxp 2aaaac0fa000 00:00 0 
+2aaaaf1c0000-2aaac36ed000 rwxp 2aaaaf1c0000 00:00 0 
+2aaac36ed000-2aaac387e000 r--s 02a2d000 00:1c 5857896                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/rt.jar
+2aaac387e000-2aaac38b1000 rw-p 2aaac387e000 00:00 0 
+2aaac4000000-2aaac4021000 rw-p 2aaac4000000 00:00 0 
+2aaac4021000-2aaac8000000 ---p 2aaac4021000 00:00 0 
+2b6c24d27000-2b6c24d29000 rw-p 2b6c24d27000 00:00 0 
+2b6c24d29000-2b6c24def000 r-xp 00000000 00:1c 5281860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libut.so
+2b6c24def000-2b6c24fee000 ---p 000c6000 00:1c 5281860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libut.so
+2b6c24fee000-2b6c24ff8000 rw-p 000c5000 00:1c 5281860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libut.so
+2b6c24ff8000-2b6c2500e000 rw-p 2b6c24ff8000 00:00 0 
+2b6c2500e000-2b6c2504b000 r-xp 00000000 00:1c 4226927                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwfl.so
+2b6c2504b000-2b6c2524b000 ---p 0003d000 00:1c 4226927                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwfl.so
+2b6c2524b000-2b6c25250000 rw-p 0003d000 00:1c 4226927                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwfl.so
+2b6c25250000-2b6c252e2000 r-xp 00000000 00:1c 5281814                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmx.so
+2b6c252e2000-2b6c254e2000 ---p 00092000 00:1c 5281814                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmx.so
+2b6c254e2000-2b6c254e5000 rw-p 00092000 00:1c 5281814                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmx.so
+2b6c254e5000-2b6c2551d000 r-xp 00000000 00:1c 4227020                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmpath.so
+2b6c2551d000-2b6c2571c000 ---p 00038000 00:1c 4227020                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmpath.so
+2b6c2571c000-2b6c25720000 rw-p 00037000 00:1c 4227020                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmpath.so
+2b6c25720000-2b6c25723000 rw-p 2b6c25720000 00:00 0 
+2b6c25723000-2b6c258ad000 r-xp 00000000 00:1c 4227051                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwservices.so
+2b6c258ad000-2b6c25aac000 ---p 0018a000 00:1c 4227051                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwservices.so
+2b6c25aac000-2b6c25aba000 rw-p 00189000 00:1c 4227051                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwservices.so
+2b6c25aba000-2b6c25aca000 rw-p 2b6c25aba000 00:00 0 
+2b6c25aca000-2b6c25b18000 r-xp 00000000 00:1c 4226966                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwjmi.so
+2b6c25b18000-2b6c25d18000 ---p 0004e000 00:1c 4226966                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwjmi.so
+2b6c25d18000-2b6c25d1c000 rw-p 0004e000 00:1c 4226966                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwjmi.so
+2b6c25d1c000-2b6c25d1d000 rw-p 2b6c25d1c000 00:00 0 
+2b6c25d1d000-2b6c25d3e000 r-xp 00000000 00:1c 4226887                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbridge.so
+2b6c25d3e000-2b6c25f3e000 ---p 00021000 00:1c 4226887                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbridge.so
+2b6c25f3e000-2b6c25f41000 rw-p 00021000 00:1c 4226887                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbridge.so
+2b6c25f41000-2b6c25f48000 rw-p 2b6c25f41000 00:00 0 
+2b6c25f48000-2b6c25fad000 r-xp 00000000 00:1c 4227007                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcr.so
+2b6c25fad000-2b6c261ad000 ---p 00065000 00:1c 4227007                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcr.so
+2b6c261ad000-2b6c261b1000 rw-p 00065000 00:1c 4227007                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcr.so
+2b6c261b1000-2b6c261b7000 rw-p 2b6c261b1000 00:00 0 
+2b6c261b7000-2b6c2622f000 r-xp 00000000 00:1c 4226974                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_dispatcher.so
+2b6c2622f000-2b6c2642f000 ---p 00078000 00:1c 4226974                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_dispatcher.so
+2b6c2642f000-2b6c26434000 rw-p 00078000 00:1c 4226974                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_dispatcher.so
+2b6c26434000-2b6c26436000 rw-p 2b6c26434000 00:00 0 
+2b6c26436000-2b6c26920000 r-xp 00000000 00:1c 4226976                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_interpreter.so
+2b6c26920000-2b6c26b1f000 ---p 004ea000 00:1c 4226976                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_interpreter.so
+2b6c26b1f000-2b6c26bf5000 rw-p 004e9000 00:1c 4226976                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_interpreter.so
+2b6c26bf5000-2b6c26c94000 rw-p 2b6c26bf5000 00:00 0 
+2b6c26c94000-2b6c26d7b000 r-xp 00000000 00:1c 5254751                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libstdc++.so.6.0.9
+2b6c26d7b000-2b6c26f7a000 ---p 000e7000 00:1c 5254751                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libstdc++.so.6.0.9
+2b6c26f7a000-2b6c26f81000 r--p 000e6000 00:1c 5254751                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libstdc++.so.6.0.9
+2b6c26f81000-2b6c26f83000 rw-p 000ed000 00:1c 5254751                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libstdc++.so.6.0.9
+2b6c26f83000-2b6c26f96000 rw-p 2b6c26f83000 00:00 0 
+2b6c26fc1000-2b6c26fce000 r-xp 00000000 00:1c 5254740                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgcc_s.so.1
+2b6c26fce000-2b6c271cd000 ---p 0000d000 00:1c 5254740                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgcc_s.so.1
+2b6c271cd000-2b6c271ce000 rw-p 0000c000 00:1c 5254740                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgcc_s.so.1
+2b6c271ce000-2b6c271d0000 rw-p 2b6c271ce000 00:00 0 
+2b6c271d0000-2b6c271f1000 r-xp 00000000 00:1c 4226848                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libexpat.so.1.5.0
+2b6c271f1000-2b6c273f0000 ---p 00021000 00:1c 4226848                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libexpat.so.1.5.0
+2b6c273f0000-2b6c273f3000 rw-p 00020000 00:1c 4226848                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libexpat.so.1.5.0
+2b6c273f3000-2b6c273f4000 rw-p 2b6c273f3000 00:00 0 
+2b6c273f4000-2b6c273f5000 r-xp 00000000 00:1c 4226859                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicudata.so.40.0
+2b6c273f5000-2b6c275f4000 ---p 00001000 00:1c 4226859                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicudata.so.40.0
+2b6c275f4000-2b6c275f5000 rw-p 00000000 00:1c 4226859                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicudata.so.40.0
+2b6c275f5000-2b6c27729000 r-xp 00000000 00:1c 4226862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuuc.so.40.0
+2b6c27729000-2b6c27929000 ---p 00134000 00:1c 4226862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuuc.so.40.0
+2b6c27929000-2b6c27939000 rw-p 00134000 00:1c 4226862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuuc.so.40.0
+2b6c27939000-2b6c2793c000 rw-p 2b6c27939000 00:00 0 
+2b6c2793c000-2b6c27ab4000 r-xp 00000000 00:1c 4226860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicui18n.so.40.0
+2b6c27ab4000-2b6c27cb3000 ---p 00178000 00:1c 4226860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicui18n.so.40.0
+2b6c27cb3000-2b6c27cc0000 rw-p 00177000 00:1c 4226860                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicui18n.so.40.0
+2b6c27cc0000-2b6c27ccb000 r-xp 00000000 00:1c 4226861                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuio.so.40.0
+2b6c27ccb000-2b6c27eca000 ---p 0000b000 00:1c 4226861                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuio.so.40.0
+2b6c27eca000-2b6c27ecc000 rw-p 0000a000 00:1c 4226861                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libicuio.so.40.0
+2b6c27ecc000-2b6c27edc000 r-xp 00000000 00:1c 4226838                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_thread-gcc42-mt-1_36.so.1.36.0
+2b6c27edc000-2b6c280db000 ---p 00010000 00:1c 4226838                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_thread-gcc42-mt-1_36.so.1.36.0
+2b6c280db000-2b6c280dd000 rw-p 0000f000 00:1c 4226838                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_thread-gcc42-mt-1_36.so.1.36.0
+2b6c280dd000-2b6c280de000 rw-p 2b6c280dd000 00:00 0 
+2b6c280de000-2b6c280f3000 r-xp 00000000 00:1c 4226836                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_signals-gcc42-mt-1_36.so.1.36.0
+2b6c280f3000-2b6c282f2000 ---p 00015000 00:1c 4226836                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_signals-gcc42-mt-1_36.so.1.36.0
+2b6c282f2000-2b6c282f3000 rw-p 00014000 00:1c 4226836                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_signals-gcc42-mt-1_36.so.1.36.0
+2b6c282f3000-2b6c282f6000 r-xp 00000000 00:1c 4226837                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_system-gcc42-mt-1_36.so.1.36.0
+2b6c282f6000-2b6c284f5000 ---p 00003000 00:1c 4226837                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_system-gcc42-mt-1_36.so.1.36.0
+2b6c284f5000-2b6c284f6000 rw-p 00002000 00:1c 4226837                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_system-gcc42-mt-1_36.so.1.36.0
+2b6c284f6000-2b6c284f7000 rw-p 2b6c284f6000 00:00 0 
+2b6c284f7000-2b6c28529000 r-xp 00000000 00:1c 4227014                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlutil.so
+2b6c28529000-2b6c28729000 ---p 00032000 00:1c 4227014                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlutil.so
+2b6c28729000-2b6c2872b000 rw-p 00032000 00:1c 4227014                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlutil.so
+2b6c2872b000-2b6c2872c000 rw-p 2b6c2872b000 00:00 0 
+2b6c2872c000-2b6c28743000 r-xp 00000000 00:1c 4226829                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_filesystem-gcc42-mt-1_36.so.1.36.0
+2b6c28743000-2b6c28942000 ---p 00017000 00:1c 4226829                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_filesystem-gcc42-mt-1_36.so.1.36.0
+2b6c28942000-2b6c28944000 rw-p 00016000 00:1c 4226829                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_filesystem-gcc42-mt-1_36.so.1.36.0
+2b6c28944000-2b6c289ab000 r-xp 00000000 00:1c 4227000                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathutil.so
+2b6c289ab000-2b6c28bab000 ---p 00067000 00:1c 4227000                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathutil.so
+2b6c28bab000-2b6c28bac000 rw-p 00067000 00:1c 4227000                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathutil.so
+2b6c28bac000-2b6c28bad000 rw-p 2b6c28bac000 00:00 0 
+2b6c28bad000-2b6c28bd6000 r-xp 00000000 00:1c 5281856                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libtbb.so.2
+2b6c28bd6000-2b6c28cd5000 ---p 00029000 00:1c 5281856                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libtbb.so.2
+2b6c28cd5000-2b6c28cd8000 rw-p 00028000 00:1c 5281856                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libtbb.so.2
+2b6c28cd8000-2b6c28cd9000 rw-p 2b6c28cd8000 00:00 0 
+2b6c28cd9000-2b6c28d3c000 r-xp 00000000 00:1c 4226960                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwiqm.so
+2b6c28d3c000-2b6c28f3b000 ---p 00063000 00:1c 4226960                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwiqm.so
+2b6c28f3b000-2b6c28f40000 rw-p 00062000 00:1c 4226960                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwiqm.so
+2b6c28f40000-2b6c28f4e000 r-xp 00000000 00:1c 4226872                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmex.so
+2b6c28f4e000-2b6c2914e000 ---p 0000e000 00:1c 4226872                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmex.so
+2b6c2914e000-2b6c2914f000 rw-p 0000e000 00:1c 4226872                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmex.so
+2b6c2914f000-2b6c29150000 rw-p 2b6c2914f000 00:00 0 
+2b6c29150000-2b6c2938b000 r-xp 00000000 00:1c 4226980                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_parser.so
+2b6c2938b000-2b6c2958b000 ---p 0023b000 00:1c 4226980                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_parser.so
+2b6c2958b000-2b6c299e9000 rw-p 0023b000 00:1c 4226980                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_parser.so
+2b6c299e9000-2b6c299ea000 rw-p 2b6c299e9000 00:00 0 
+2b6c299ea000-2b6c29ab4000 r-xp 00000000 00:1c 5281800                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd.so
+2b6c29ab4000-2b6c29cb3000 ---p 000ca000 00:1c 5281800                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd.so
+2b6c29cb3000-2b6c29cc9000 rw-p 000c9000 00:1c 5281800                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd.so
+2b6c29cc9000-2b6c29ccd000 rw-p 2b6c29cc9000 00:00 0 
+2b6c29ccd000-2b6c29d3e000 r-xp 00000000 00:1c 4227012                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlint.so
+2b6c29d3e000-2b6c29f3d000 ---p 00071000 00:1c 4227012                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlint.so
+2b6c29f3d000-2b6c29f44000 rw-p 00070000 00:1c 4227012                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlint.so
+2b6c29f44000-2b6c29f4b000 r-xp 00000000 00:1c 4227025                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmtok.so
+2b6c29f4b000-2b6c2a14a000 ---p 00007000 00:1c 4227025                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmtok.so
+2b6c2a14a000-2b6c2a14b000 rw-p 00006000 00:1c 4227025                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmtok.so
+2b6c2a14b000-2b6c2a37c000 r-xp 00000000 00:1c 4227003                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcos.so
+2b6c2a37c000-2b6c2a57b000 ---p 00231000 00:1c 4227003                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcos.so
+2b6c2a57b000-2b6c2a59f000 rw-p 00230000 00:1c 4227003                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmcos.so
+2b6c2a59f000-2b6c2a5a1000 rw-p 2b6c2a59f000 00:00 0 
+2b6c2a5a1000-2b6c2a6a8000 r-xp 00000000 00:1c 4226944                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwgui.so
+2b6c2a6a8000-2b6c2a8a7000 ---p 00107000 00:1c 4226944                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwgui.so
+2b6c2a8a7000-2b6c2a8e2000 rw-p 00106000 00:1c 4226944                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwgui.so
+2b6c2a8e2000-2b6c2a8e3000 rw-p 2b6c2a8e2000 00:00 0 
+2b6c2a8e3000-2b6c2af71000 r-xp 00000000 00:1c 4226950                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhg.so
+2b6c2af71000-2b6c2b170000 ---p 0068e000 00:1c 4226950                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhg.so
+2b6c2b170000-2b6c2b1fa000 rw-p 0068d000 00:1c 4226950                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhg.so
+2b6c2b1fa000-2b6c2b204000 rw-p 2b6c2b1fa000 00:00 0 
+2b6c2b204000-2b6c2b244000 r-xp 00000000 00:1c 5281858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libuij.so
+2b6c2b244000-2b6c2b444000 ---p 00040000 00:1c 5281858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libuij.so
+2b6c2b444000-2b6c2b446000 rw-p 00040000 00:1c 5281858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libuij.so
+2b6c2b446000-2b6c2b447000 rw-p 2b6c2b446000 00:00 0 
+2b6c2b447000-2b6c2b4db000 r-xp 00000000 00:1c 5281802                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd_mi.so
+2b6c2b4db000-2b6c2b6da000 ---p 00094000 00:1c 5281802                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd_mi.so
+2b6c2b6da000-2b6c2b6e5000 rw-p 00093000 00:1c 5281802                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwudd_mi.so
+2b6c2b6e5000-2b6c2b6e6000 rw-p 2b6c2b6e5000 00:00 0 
+2b6c2b6e6000-2b6c2b6eb000 r-xp 00000000 00:1c 5281804                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuinone.so
+2b6c2b6eb000-2b6c2b8eb000 ---p 00005000 00:1c 5281804                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuinone.so
+2b6c2b8eb000-2b6c2b8ec000 rw-p 00005000 00:1c 5281804                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuinone.so
+2b6c2b8ec000-2b6c2b8ed000 rw-p 2b6c2b8ec000 00:00 0 
+2b6c2b8ed000-2b6c2b934000 r-xp 00000000 00:1c 4226978                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_ir.so
+2b6c2b934000-2b6c2bb34000 ---p 00047000 00:1c 4226978                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_ir.so
+2b6c2bb34000-2b6c2bb3c000 rw-p 00047000 00:1c 4226978                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_ir.so
+2b6c2bb3c000-2b6c2bc7c000 r-xp 00000000 00:1c 5281806                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuix.so
+2b6c2bc7c000-2b6c2be7c000 ---p 00140000 00:1c 5281806                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuix.so
+2b6c2be7c000-2b6c2be90000 rw-p 00140000 00:1c 5281806                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwuix.so
+2b6c2be90000-2b6c2be96000 rw-p 2b6c2be90000 00:00 0 
+2b6c2be96000-2b6c2bf0f000 r-xp 00000000 00:1c 5281809                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwxmlcore.so
+2b6c2bf0f000-2b6c2c10f000 ---p 00079000 00:1c 5281809                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwxmlcore.so
+2b6c2c10f000-2b6c2c117000 rw-p 00079000 00:1c 5281809                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwxmlcore.so
+2b6c2c117000-2b6c2c118000 rw-p 2b6c2c117000 00:00 0 
+2b6c2c118000-2b6c2c1db000 r-xp 00000000 00:1c 4226834                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_regex-gcc42-mt-1_36.so.1.36.0
+2b6c2c1db000-2b6c2c3da000 ---p 000c3000 00:1c 4226834                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_regex-gcc42-mt-1_36.so.1.36.0
+2b6c2c3da000-2b6c2c3df000 rw-p 000c2000 00:1c 4226834                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libboost_regex-gcc42-mt-1_36.so.1.36.0
+2b6c2c3df000-2b6c2c3e1000 rw-p 2b6c2c3df000 00:00 0 
+2b6c2c3e1000-2b6c2c7a7000 r-xp 00000000 00:1c 5281862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libxerces-c.so.27.0
+2b6c2c7a7000-2b6c2c9a6000 ---p 003c6000 00:1c 5281862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libxerces-c.so.27.0
+2b6c2c9a6000-2b6c2c9ea000 rw-p 003c5000 00:1c 5281862                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libxerces-c.so.27.0
+2b6c2c9ea000-2b6c2c9eb000 rw-p 2b6c2c9ea000 00:00 0 
+2b6c2c9eb000-2b6c2ca13000 r-xp 00000000 00:1c 4226870                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmat.so
+2b6c2ca13000-2b6c2cc12000 ---p 00028000 00:1c 4226870                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmat.so
+2b6c2cc12000-2b6c2cc14000 rw-p 00027000 00:1c 4226870                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmat.so
+2b6c2cc14000-2b6c2cc50000 r-xp 00000000 00:1c 4227032                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwprofiler.so
+2b6c2cc50000-2b6c2ce50000 ---p 0003c000 00:1c 4227032                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwprofiler.so
+2b6c2ce50000-2b6c2ce53000 rw-p 0003c000 00:1c 4227032                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwprofiler.so
+2b6c2ce53000-2b6c2ce54000 rw-p 2b6c2ce53000 00:00 0 
+2b6c2ce54000-2b6c2ce7b000 r-xp 00000000 00:1c 4226996                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathrng.so
+2b6c2ce7b000-2b6c2d07a000 ---p 00027000 00:1c 4226996                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathrng.so
+2b6c2d07a000-2b6c2d07c000 rw-p 00026000 00:1c 4226996                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathrng.so
+2b6c2d07c000-2b6c2d07e000 rw-p 2b6c2d07c000 00:00 0 
+2b6c2d07e000-2b6c2d089000 r-xp 00000000 00:1c 4227010                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlib.so
+2b6c2d089000-2b6c2d288000 ---p 0000b000 00:1c 4227010                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlib.so
+2b6c2d288000-2b6c2d28a000 rw-p 0000a000 00:1c 4227010                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmlib.so
+2b6c2d28a000-2b6c2d28b000 rw-p 2b6c2d28a000 00:00 0 
+2b6c2d28b000-2b6c2d29d000 r-xp 00000000 00:1c 4226984                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodeio.so
+2b6c2d29d000-2b6c2d49d000 ---p 00012000 00:1c 4226984                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodeio.so
+2b6c2d49d000-2b6c2d49e000 rw-p 00012000 00:1c 4226984                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodeio.so
+2b6c2d49e000-2b6c2d4b7000 r-xp 00000000 00:1c 4226982                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodegen.so
+2b6c2d4b7000-2b6c2d6b6000 ---p 00019000 00:1c 4226982                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodegen.so
+2b6c2d6b6000-2b6c2d6b8000 rw-p 00018000 00:1c 4226982                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwm_pcodegen.so
+2b6c2d6b8000-2b6c2d6b9000 rw-p 2b6c2d6b8000 00:00 0 
+2b6c2d6b9000-2b6c2d6c8000 r-xp 00000000 00:1c 4226964                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwir_xfmr.so
+2b6c2d6c8000-2b6c2d8c8000 ---p 0000f000 00:1c 4226964                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwir_xfmr.so
+2b6c2d8c8000-2b6c2d8c9000 rw-p 0000f000 00:1c 4226964                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwir_xfmr.so
+2b6c2d8c9000-2b6c2d8ca000 rw-p 2b6c2d8c9000 00:00 0 
+2b6c2d8ca000-2b6c2d8f7000 r-xp 00000000 00:1c 4226948                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhardcopy.so
+2b6c2d8f7000-2b6c2daf6000 ---p 0002d000 00:1c 4226948                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhardcopy.so
+2b6c2daf6000-2b6c2daf8000 rw-p 0002c000 00:1c 4226948                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhardcopy.so
+2b6c2daf8000-2b6c2daf9000 rw-p 2b6c2daf8000 00:00 0 
+2b6c2daf9000-2b6c2dbd0000 r-xp 00000000 00:1c 4226994                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathlinalg.so
+2b6c2dbd0000-2b6c2ddd0000 ---p 000d7000 00:1c 4226994                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathlinalg.so
+2b6c2ddd0000-2b6c2ddd2000 rw-p 000d7000 00:1c 4226994                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathlinalg.so
+2b6c2ddd2000-2b6c2ddd3000 rw-p 2b6c2ddd2000 00:00 0 
+2b6c2ddd3000-2b6c2df49000 r-xp 00000000 00:1c 4226954                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgdatatypes.so
+2b6c2df49000-2b6c2e148000 ---p 00176000 00:1c 4226954                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgdatatypes.so
+2b6c2e148000-2b6c2e15e000 rw-p 00175000 00:1c 4226954                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgdatatypes.so
+2b6c2e15e000-2b6c2e15f000 rw-p 2b6c2e15e000 00:00 0 
+2b6c2e15f000-2b6c2e193000 r-xp 00000000 00:1c 4226956                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgutils.so
+2b6c2e193000-2b6c2e392000 ---p 00034000 00:1c 4226956                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgutils.so
+2b6c2e392000-2b6c2e395000 rw-p 00033000 00:1c 4226956                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwhgutils.so
+2b6c2e395000-2b6c2e396000 rw-p 2b6c2e395000 00:00 0 
+2b6c2e396000-2b6c2e434000 r-xp 00000000 00:1c 4226968                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwlapack.so
+2b6c2e434000-2b6c2e633000 ---p 0009e000 00:1c 4226968                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwlapack.so
+2b6c2e633000-2b6c2e63c000 rw-p 0009d000 00:1c 4226968                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwlapack.so
+2b6c2e63c000-2b6c2e8af000 r-xp 00000000 00:1c 5254739                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libXm.so.3.0.2
+2b6c2e8af000-2b6c2eaaf000 ---p 00273000 00:1c 5254739                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libXm.so.3.0.2
+2b6c2eaaf000-2b6c2ead9000 rw-p 00273000 00:1c 5254739                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libXm.so.3.0.2
+2b6c2ead9000-2b6c2eadc000 rw-p 2b6c2ead9000 00:00 0 
+2b6c2eadc000-2b6c2eaf7000 r-xp 00000000 00:1c 4226858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5_hl.so.0.0.0
+2b6c2eaf7000-2b6c2ecf7000 ---p 0001b000 00:1c 4226858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5_hl.so.0.0.0
+2b6c2ecf7000-2b6c2ecf8000 rw-p 0001b000 00:1c 4226858                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5_hl.so.0.0.0
+2b6c2ecf8000-2b6c2ed0a000 rw-p 2b6c2ecf8000 00:00 0 
+2b6c2ed0a000-2b6c2ef8d000 r-xp 00000000 00:1c 4226857                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5.so.5.0.1
+2b6c2ef8d000-2b6c2f18c000 ---p 00283000 00:1c 4226857                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5.so.5.0.1
+2b6c2f18c000-2b6c2f196000 rw-p 00282000 00:1c 4226857                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libhdf5.so.5.0.1
+2b6c2f196000-2b6c2f197000 rw-p 2b6c2f196000 00:00 0 
+2b6c2f197000-2b6c2f5a8000 r-xp 00000000 00:1c 4226992                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathelem.so
+2b6c2f5a8000-2b6c2f7a8000 ---p 00411000 00:1c 4226992                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathelem.so
+2b6c2f7a8000-2b6c2f7b0000 rw-p 00411000 00:1c 4226992                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathelem.so
+2b6c2f7b0000-2b6c2f7b2000 rw-p 2b6c2f7b0000 00:00 0 
+2b6c2f7b2000-2b6c2f83f000 r-xp 00000000 00:1c 4226988                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathcore.so
+2b6c2f83f000-2b6c2fa3e000 ---p 0008d000 00:1c 4226988                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathcore.so
+2b6c2fa3e000-2b6c2fa42000 rw-p 0008c000 00:1c 4226988                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwmathcore.so
+2b6c2fa42000-2b6c2fa56000 r-xp 00000000 00:1c 4226883                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwblas.so
+2b6c2fa56000-2b6c2fc55000 ---p 00014000 00:1c 4226883                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwblas.so
+2b6c2fc55000-2b6c2fc57000 rw-p 00013000 00:1c 4226883                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwblas.so
+2b6c2fc57000-2b6c2fc58000 rw-p 2b6c2fc57000 00:00 0 
+2b6c2fc58000-2b6c2fc60000 r-xp 00000000 00:1c 4226878                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwamd.so
+2b6c2fc60000-2b6c2fe5f000 ---p 00008000 00:1c 4226878                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwamd.so
+2b6c2fe5f000-2b6c2fe60000 rw-p 00007000 00:1c 4226878                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwamd.so
+2b6c2fe60000-2b6c2fea1000 r-xp 00000000 00:1c 4226898                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcholmod.so
+2b6c2fea1000-2b6c300a0000 ---p 00041000 00:1c 4226898                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcholmod.so
+2b6c300a0000-2b6c300a1000 rw-p 00040000 00:1c 4226898                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcholmod.so
+2b6c300a1000-2b6c300a2000 rw-p 2b6c300a1000 00:00 0 
+2b6c300a2000-2b6c300a8000 r-xp 00000000 00:1c 4226901                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcolamd.so
+2b6c300a8000-2b6c302a7000 ---p 00006000 00:1c 4226901                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcolamd.so
+2b6c302a7000-2b6c302a8000 rw-p 00005000 00:1c 4226901                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcolamd.so
+2b6c302a8000-2b6c302b2000 r-xp 00000000 00:1c 4226903                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcsparse.so
+2b6c302b2000-2b6c304b2000 ---p 0000a000 00:1c 4226903                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcsparse.so
+2b6c304b2000-2b6c304b3000 rw-p 0000a000 00:1c 4226903                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwcsparse.so
+2b6c304b3000-2b6c304b4000 rw-p 2b6c304b3000 00:00 0 
+2b6c304b4000-2b6c304db000 r-xp 00000000 00:1c 4226986                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwma57.so
+2b6c304db000-2b6c306da000 ---p 00027000 00:1c 4226986                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwma57.so
+2b6c306da000-2b6c306db000 rw-p 00026000 00:1c 4226986                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwma57.so
+2b6c306db000-2b6c3070d000 r-xp 00000000 00:1c 4227035                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwrookfastbp.so
+2b6c3070d000-2b6c3090c000 ---p 00032000 00:1c 4227035                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwrookfastbp.so
+2b6c3090c000-2b6c3090d000 rw-p 00031000 00:1c 4227035                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwrookfastbp.so
+2b6c3090d000-2b6c3090e000 rw-p 2b6c3090d000 00:00 0 
+2b6c3090e000-2b6c3092f000 r-xp 00000000 00:1c 4227069                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwspqr.so
+2b6c3092f000-2b6c30b2e000 ---p 00021000 00:1c 4227069                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwspqr.so
+2b6c30b2e000-2b6c30b2f000 rw-p 00020000 00:1c 4227069                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwspqr.so
+2b6c30b2f000-2b6c30b83000 r-xp 00000000 00:1c 5281808                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwumfpack.so
+2b6c30b83000-2b6c30d82000 ---p 00054000 00:1c 5281808                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwumfpack.so
+2b6c30d82000-2b6c30d83000 rw-p 00053000 00:1c 5281808                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwumfpack.so
+2b6c30d83000-2b6c30d84000 rw-p 2b6c30d83000 00:00 0 
+2b6c30d84000-2b6c30d8c000 r-xp 00000000 00:1c 4226880                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbinder.so
+2b6c30d8c000-2b6c30f8b000 ---p 00008000 00:1c 4226880                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbinder.so
+2b6c30f8b000-2b6c30f8c000 rw-p 00007000 00:1c 4226880                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libmwbinder.so
+2b6c30f8c000-2b6c30f8d000 rw-p 2b6c30f8c000 00:00 0 
+2b6c30f8d000-2b6c30f95000 r-xp 00000000 08:02 3498350                    /usr/lib64/libXp.so.6.2.0
+2b6c30f95000-2b6c31194000 ---p 00008000 08:02 3498350                    /usr/lib64/libXp.so.6.2.0
+2b6c31194000-2b6c31195000 rw-p 00007000 08:02 3498350                    /usr/lib64/libXp.so.6.2.0
+2b6c31195000-2b6c31197000 rw-p 2b6c31195000 00:00 0 
+2b6c31197000-2b6c3124f000 r-xp 00000000 00:1c 5254741                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgfortran.so.2.0.0
+2b6c3124f000-2b6c3144f000 ---p 000b8000 00:1c 5254741                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgfortran.so.2.0.0
+2b6c3144f000-2b6c31451000 rw-p 000b8000 00:1c 5254741                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64/libgfortran.so.2.0.0
+2b6c31451000-2b6c31457000 rw-p 2b6c31451000 00:00 0 
+2b6c31457000-2b6c3219b000 r--s 00000000 00:1c 4226813                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/icudt40l.dat
+2b6c3219b000-2b6c3576c000 r--p 00000000 08:02 1237906                    /usr/lib/locale/locale-archive
+2b6c3576c000-2b6c35773000 r--s 00000000 08:02 3552033                    /usr/lib64/gconv/gconv-modules.cache
+2b6c35773000-2b6c3657a000 r-xp 00000000 00:1c 5281868                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mkl.so
+2b6c3657a000-2b6c36779000 ---p 00e07000 00:1c 5281868                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mkl.so
+2b6c36779000-2b6c3678e000 rw-p 00e06000 00:1c 5281868                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mkl.so
+2b6c3678e000-2b6c367a4000 rw-p 2b6c3678e000 00:00 0 
+2b6c367a4000-2b6c36810000 r-xp 00000000 00:1c 4226865                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libiomp5.so
+2b6c36810000-2b6c36910000 ---p 0006c000 00:1c 4226865                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libiomp5.so
+2b6c36910000-2b6c36915000 rw-p 0006c000 00:1c 4226865                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/libiomp5.so
+2b6c36915000-2b6c3691c000 rw-p 2b6c36915000 00:00 0 
+2b6c3691c000-2b6c3691f000 r-xp 00000000 00:1c 5281869                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mklcompat.so
+2b6c3691f000-2b6c36b1e000 ---p 00003000 00:1c 5281869                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mklcompat.so
+2b6c36b1e000-2b6c36b1f000 rw-p 00002000 00:1c 5281869                    /autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64/mklcompat.so
+7fff53c2a000-7fff53c3e000 rwxp 7ffffffe8000 00:00 0                      [stack]
+7fff53c3e000-7fff53c40000 rw-p 7fffffffd000 00:00 0 
+7fff53d80000-7fff53d84000 r-xp 7fff53d80000 00:00 0                      [vdso]
+ffffffffff600000-ffffffffffe00000 ---p 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms64m -XX:NewRatio=3 -XX:MaxPermSize=128m -Xmx196m -XX:MaxDirectMemorySize=2147400000 -Djava.util.prefs.PreferencesFactory=com.mathworks.util.DisabledPreferencesFactory -XX:+AllowUserSignalHandlers -Xrs -Djava.library.path=/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64 vfprintf abort -Djava.awt.headless=true -Xrs -Dfile.encoding=UTF-8 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/usr/pubsw/packages/mne/stable/bin:/space/orsay/8/megdev/megsw-neuromag/bin/util:/space/orsay/8/megdev/megsw-neuromag/bin/X11:/homes/6/santosh/bin:/usr/pubsw/bin:/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/usr/java/current/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/NX/bin:/usr/bin/X11
+LD_LIBRARY_PATH=/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/extern/lib/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/runtime/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/server:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/os/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/bin/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/extern/lib/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/runtime/glnxa64:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64/server:/autofs/cluster/pubsw/2/pubsw/common/matlab/7.9/sys/java/jre/glnxa64/jre/lib/amd64:/usr/pubsw/packages/mne/stable/lib:/usr/pubsw/packages/mne/stable/lib
+SHELL=/usr/local/bin/tcsh
+DISPLAY=localhost:16.0
+HOSTTYPE=x86_64-linux
+OSTYPE=linux
+ARCH=glnxa64
+MACHTYPE=x86_64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x5fcd20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x5fcd20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x4e0eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x4e0eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x4e0eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x4e0eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x4e35d0], sa_mask[0]=0x08080002, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: [libmwmcr.so+0x52340], sa_mask[0]=0x08080002, sa_flags=0x00000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 5.6 (Final)
+
+uname:Linux 2.6.18-238.9.1.el5 #1 SMP Tue Apr 12 18:10:13 EDT 2011 x86_64
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK infinity, CORE 0k, NPROC 2113536, NOFILE 1024, AS infinity
+load average:6.03 1.93 0.71
+
+CPU:total 64 (16 cores per cpu, 2 threads per core) family 6 model 14 stepping 6, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 264256884k(31509100k free), swap 125009788k(124247408k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.2-b01) for linux-amd64 JRE (1.6.0_12-b04), built on Jan 17 2009 01:04:06 by "java_re" with gcc 3.2.2 (SuSE Linux)
+
+time: Thu Dec 15 16:18:52 2011
+elapsed time: 0 seconds
+

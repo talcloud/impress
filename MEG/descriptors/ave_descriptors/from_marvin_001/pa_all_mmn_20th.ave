@@ -1,0 +1,122 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+
+#	fixSkew
+	logfile         pa_mmn-ave.log
+	gradReject	200e-12
+	magReject	3e-12
+	eogReject	200e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+
+
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+
+#
+	category {
+
+		name	"Standard10"
+
+		event	10
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.1
+		tmax	0.6
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    0
+	}
+       category {
+
+		name	"Standard11"
+
+		event	11
+
+		ignore	0
+		tmin   -0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant23"
+
+		event	23
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant24"
+
+		event	24
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant25"
+
+		event	25
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant26"
+
+		event	26
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant27"
+
+		event	27
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	
+}

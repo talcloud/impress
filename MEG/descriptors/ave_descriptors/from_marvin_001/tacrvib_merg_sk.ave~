@@ -1,0 +1,92 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile         tac-r-ave.log
+	gradReject	1500e-13
+	magReject	3.5e-12
+	#eogReject	220e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+#	emgReject?
+#
+#	Additional rejection parameters
+#
+#	eegReject?
+
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	
+
+category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Long"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	91
+
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin	0.35
+		tmax	1.72
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    0.35
+		bmax    0.5
+	}
+
+category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"short"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	90
+
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin	0.35
+		tmax	1.72
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    0.35
+		bmax    0.5
+	}
+
+
+

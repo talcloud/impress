@@ -1,0 +1,53 @@
+Starting Specified Actions AC002
+{??? Reference to non-existent field 'do_epochMEG'.
+
+Error in ==> <a href="matlab: opentoline('/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/do_epochMEG_main.m',69,0)">do_epochMEG_main at 69</a>
+if (cfg.do_epochMEG)
+} 
+[subj,visitNo,run,cfg]=do_epochMEG_main(subj,visitNo,run,cfg)
+Starting Specified Actions AC002
+{??? Reference to non-existent field 'do_epochMEG'.
+
+Error in ==> <a href="matlab: opentoline('/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/do_epochMEG_main.m',69,0)">do_epochMEG_main at 69</a>
+if (cfg.do_epochMEG)
+} 
+[subj,visitNo,run,cfg]=do_epochMEG_main(subj,visitNo,run,cfg)
+Starting Specified Actions AC002
+Starting epochMEG AC002
+{??? Error using ==> do_epochMEG
+Too many output arguments.
+
+Error in ==> <a href="matlab: opentoline('/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/do_epochMEG_main.m',71,0)">do_epochMEG_main at 71</a>
+[subj,visitNo,run,cfg]=do_epochMEG(subj,visitNo,run,cfg);
+} 
+[subj,visitNo,run,cfg]=do_epochMEG_main(subj,visitNo,run,cfg)
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002
+Starting Specified Actions AC002
+Starting epochMEG AC002

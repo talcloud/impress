@@ -1,0 +1,416 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         01_ns_fmm_offlave.fif
+#	logfile         01_ns_fmm.log
+#	eventfile	mismatch1.eve
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile         pa_mmn-ave.log
+	gradReject	200e-12
+	magReject	3e-12
+	eogReject	200e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+
+
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Standard10"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	10
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.1
+		tmax	0.6
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.1
+		bmax    0
+	}
+       category {
+
+		name	"Standard11"
+
+		event	11
+
+		ignore	0
+		tmin   -0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"Deviant23"
+
+		event	23
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant24"
+
+		event	24
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant25"
+
+		event	25
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant26"
+
+		event	26
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant27"
+
+		event	27
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant33"
+
+		event	33
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant34"
+
+		event	34
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant35"
+
+		event	35
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant36"
+
+		event	36
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant37"
+
+		event	37
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant43"
+
+		event	43
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant44"
+
+		event	44
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant45"
+
+		event	45
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant46"
+
+		event	46
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant47"
+
+		event	47
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant53"
+
+		event	53
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant54"
+
+		event	54
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant55"
+
+		event	55
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant56"
+
+		event	56
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"Deviant57"
+
+		event	57
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+
+category {
+
+		name	"control70"
+
+		event	70
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"control71"
+
+		event	71
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"control72"
+
+		event	72
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"control73"
+
+		event	73
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"control74"
+
+		event	74
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+category {
+
+		name	"control75"
+
+		event	75
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+}

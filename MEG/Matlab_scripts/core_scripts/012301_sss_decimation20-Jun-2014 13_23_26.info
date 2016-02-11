@@ -1,0 +1,37 @@
+Starting to Decimate 012301
+decimating to 600 Hz sampling 012301
+Opening raw data file 012301_tacr_1_sss.fif...
+	Range : 16200 ... 374999  =     26.972 ...   624.358 secs
+Ready.
+decim = 1
+
+ DECIMATING THE DATA WITH LPF SET TO 144 Hz 
+
+ Command executed: /usr/pubsw/packages/mne/nightly/bin/mne_process_raw --raw 012301_tacr_1_sss.fif --decim  1 --lowpass 144     --projoff  --save 012301_tacr_1_decim.fif >& 012301_tacr_decim.log 
+
+ DECIMATION OF SSS FILE COMPLETE 
+
+ 
+ Changing permissions of files created by this script 
+
+success =
+
+    20
+
+
+messageid =
+
+Cannot chdir to 002901_epochMEG_main_.info
+
+
+
+success =
+
+     0
+
+
+messageid =
+
+     ''
+
+

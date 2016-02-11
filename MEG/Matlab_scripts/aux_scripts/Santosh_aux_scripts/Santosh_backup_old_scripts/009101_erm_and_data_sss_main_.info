@@ -1,0 +1,57 @@
+Performing sss_hpifit 009101
+Performing sss_bad_channels 009101
+Performing sss_movement_comp, if needed 009101
+Performing sss_without_movement_comp, if needed 009101
+Performing Transformation of multiple runs into a single run, if needed 009101
+Performing decimation  009101
+Performing erm_filtering  009101
+Performing erm_noise_covariance  009101
+Starting Specified Actions 009101
+Starting sss_hpifit 009101
+{??? Error using ==> <a href="matlab: opentoline('/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/do_sss_hpifit.m',7,0)">do_sss_hpifit at 7</a>
+Please enter a root directory in sub-structure cfg.data_rootdir:
+Thank you
+
+Error in ==> <a href="matlab: opentoline('/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/do_erm_and_data_sss_main.m',121,0)">do_erm_and_data_sss_main at 121</a>
+[cfg]=do_sss_hpifit(subj,visitNo,run,cfg);
+} 
+cfg.data_rootdir='/autofs/space/marvin_001/users/MEG/scripts/kenet/ml/curr/Santosh/SVN/Test/SSS_Test'
+
+cfg = 
+
+     erm_rootdir: [1x73 char]
+        data_dir: [1x82 char]
+        protocol: 'fmm'
+    data_rootdir: [1x82 char]
+
+[subj,visitNo,run,cfg]=do_erm_and_data_sss_main('009101',1,2,1,cfg)
+Performing sss_hpifit 009101
+Performing sss_bad_channels 009101
+Performing sss_movement_comp, if needed 009101
+Performing sss_without_movement_comp, if needed 009101
+Performing Transformation of multiple runs into a single run, if needed 009101
+Performing decimation  009101
+Performing erm_filtering  009101
+Performing erm_noise_covariance  009101
+Starting Specified Actions 009101
+Starting sss_hpifit 009101
+Performing sss_hpifit 009101
+Performing sss_bad_channels 009101
+Performing sss_movement_comp, if needed 009101
+Performing sss_without_movement_comp, if needed 009101
+Performing Transformation of multiple runs into a single run, if needed 009101
+Performing decimation  009101
+Performing erm_filtering  009101
+Performing erm_noise_covariance  009101
+Starting Specified Actions 009101
+Starting sss_hpifit 009101
+Performing sss_hpifit 009101
+Performing sss_bad_channels 009101
+Performing sss_movement_comp, if needed 009101
+Performing sss_without_movement_comp, if needed 009101
+Performing Transformation of multiple runs into a single run, if needed 009101
+Performing decimation  009101
+Performing erm_filtering  009101
+Performing erm_noise_covariance  009101
+Starting Specified Actions 009101
+Starting sss_hpifit 009101

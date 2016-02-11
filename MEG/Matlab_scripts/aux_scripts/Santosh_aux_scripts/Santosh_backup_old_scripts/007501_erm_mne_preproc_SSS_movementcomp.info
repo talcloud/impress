@@ -1,0 +1,17 @@
+
+ Beginning pre-processing for SUBJECT: 007501 
+
+ Analyzing paradigm: 007501
+
+st =
+
+     0
+
+
+wt =
+
+     ''
+
+
+
+ Command executed: /space/orsay/8/megdev/megsw-neuromag/bin/util/maxfilter -f  007501_erm_1_raw.fif -o  007501_erm_1_sss.fif  -autobad on -linefreq 60 -format  short -force  -frame device -origin 0 13 -6  -v >& 007501_erm_1_sss.log 

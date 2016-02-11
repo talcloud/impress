@@ -1,0 +1,28 @@
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',180,1)">180 </a>if ~isfield(cfg,'protocol'),
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',188,1)">188 </a>subjdir=[cfg.data_rootdir '/' subj '/' num2str(visitNo) '/'];
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',189,1)">189 </a>cd(subjdir) % cd to the fif dir
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',192,1)">192 </a>diary(strcat(subj,'_epochMEG_sub_',datestr(clock),'.info'));
+dbstep
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+dbcont
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+Starting Specified Actions 007501
+Starting epochMEG 007501
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 

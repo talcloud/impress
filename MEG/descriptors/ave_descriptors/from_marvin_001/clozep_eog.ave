@@ -1,0 +1,31 @@
+average {
+#outfile __OUTFILE__
+#eventfile __EVEFILE__
+#logfile __LOGFILE__
+grdReject 200e-12
+magReject 4e-12
+eegReject -1
+eogReject 80e-6
+emgReject -1
+name "WordOnsets"
+#low clozep: Noun: 1314=1280+34, Verb: 1057=1024+33, high clozep: 1346=1280+66, 1089=1024+65
+
+category {
+name "NounL"
+event 1314 
+tmin -.4
+tmax 1
+bmin    -0.2
+bmax     0
+}
+category {
+name "NounH"
+event 1346 
+tmin -.4
+tmax 1
+bmin    -0.2
+bmax     0
+}
+
+
+}

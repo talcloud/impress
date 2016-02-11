@@ -1,0 +1,497 @@
+ SCRIPT DIR :/space/calvin/1/marvin/1/users/MRI/scripts/ 
+ SCRIPT EXECUTED : do_srcspc_setup.csh
+ SCRIPT EXECUTED BY : sheraz
+ DATE EXECUTED : Wed Feb 5 18:50:30 EST 2014
+
+==================================================
+ Reminder!  This is an old version of Freesurfer!
+
+ If you need to use this version, set this var
+ prior to sourcing this script:
+
+ setenv USE_STABLE_5_1_0
+
+ You are encouraged to use v5.2:
+
+ source /usr/local/freesurfer/nmr-stable52-env
+==================================================
+
+MNE software location set to:    /usr/pubsw/packages/mne/nightly/
+MATLAB software location set to: /space/orsay/8/megdev/megsw-dev/matlab
+
+/usr/pubsw/packages/mne/nightly//bin added to PATH
+/usr/pubsw/packages/mne/nightly//lib added to LD_LIBRARY_PATH
+/usr/pubsw/packages/mne/nightly//share/app-defaults/%N added to XUSERFILESEARCHPATH
+
+WARNING: The /homes/6/sheraz/matlab/startup.m file does not appear to be
+         configured correctly. You may not be able
+         to access the MNE Matlab toolbox.
+Try adding the following lines to /homes/6/sheraz/matlab/startup.m
+%---------------------- MNE --------------------------%
+mnehome = getenv('MNE_ROOT');
+mnematlab = sprintf('%s/share/matlab',mnehome);
+if (exist(mnematlab) == 7)
+    path(path,mnematlab);
+end
+clear mnehome mnematlab;
+%-----------------------------------------------------%
+
+
+Note: Remember to set SUBJECTS_DIR and SUBJECT environment variables correctly.
+Note: FreeSurfer environment is needed to access tkmedit from mne_analyze.
+
+ SUBJECTS_DIR is /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons
+ SUBJECT is CH08
+
+ setting up the MR images for subject CH08
+
+-----------------------------------------------------------------------------------------------
+Setting up T1...
+Creating /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1-neuromag/sets/COR.fif...
+
+mne_make_cor_set version 1.5 compiled at Feb  5 2014 04:21:29
+
+mgh/mgz input file : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+output file        : COR.fif
+Include data in the output file
+
+Reading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz...[done]
+Adding Talairach transforms...read /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/transforms/talairach.xfm...[done]
+All 256 slices composed.
+
+Wrote COR.fif
+Created /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1-neuromag/sets/COR.fif
+-----------------------------------------------------------------------------------------------
+
+Complete.
+
+
+generating 10242  sources per hemisphere  with a source spacing of 3.1mm for subject CH08 [--ico 5 --cps] 
+
+
+Setting up the source space with the following parameters:
+
+SUBJECTS_DIR = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons
+Subject      = CH08
+Surface      = white
+Icosahedron subdivision grade 5
+Create a source space with patch information
+
+>>> 1. Creating the source space file /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5-src.fif...
+
+mne_make_source_space version 2.6 compiled at Feb  5 2014 04:17:49
+
+Loading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.white...
+Triangle file : created by tapsya.nayak on Thu May 30 18:13:00 2013 nvert = 149160 ntri = 298316
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[894948 distances done]
+Doing the icosahedral vertex picking...
+Loading geometry from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.sphere...
+Triangle file : created by tapsya.nayak on Thu May 30 19:56:53 2013 nvert = 149160 ntri = 298316
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[61440 distances done]
+Mapping lh CH08 -> ico (5) ...[done]
+Setting up the triangulation for the decimated surface...
+loaded lh.white 10242/149160 selected to source space (ico = 5)
+
+Loading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/rh.white...
+Triangle file : created by tapsya.nayak on Thu May 30 21:19:44 2013 nvert = 144668 ntri = 289332
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[867996 distances done]
+Doing the icosahedral vertex picking...
+Loading geometry from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/rh.sphere...
+Triangle file : created by tapsya.nayak on Thu May 30 22:51:48 2013 nvert = 144668 ntri = 289332
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[61440 distances done]
+Mapping rh CH08 -> ico (5) ...[done]
+Setting up the triangulation for the decimated surface...
+loaded rh.white 10242/144668 selected to source space (ico = 5)
+
+Wrote /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5-src.fif
+You are now one step closer to computing the gain matrix.
+
+Temporary files removed.
+
+>>> 2. Creating a source space with patch information
+       This will take quite a while...
+
+mne_add_patch_info version 1.6 compiled at Feb  5 2014 04:20:42
+
+input file                : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5-src.fif
+output file               : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5p-src.fif
+output w file stem        : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5p
+
+Reading from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5-src.fif...
+Loaded 2 source spaces from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-ico-5-src.fif
+	Triangle normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[894948 distances done]
+	Triangle normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[867996 distances done]
+Defining patches (this will take a few mins)...
+Node 44 does not belong to any of the patches
+
+Finished.
+
+
+ generating BEM meshes for  subject CH08 
+
+
+Running mri_watershed for BEM segmentation with the following parameters
+
+SUBJECTS_DIR = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons
+Subject      = CH08
+Result dir   = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/watershed
+
+Temporary files removed.
+
+Mode:          Atlas analysis
+Mode:          use surfaceRAS to save surface vertex positions
+Mode:          Saving out BEM surfaces
+
+*********************************************************
+The input file is /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+The output file is /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/watershed/ws
+
+*************************WATERSHED**************************
+Sorting...
+      T1-weighted MRI image
+      modification of the preflooding height to 15 percent
+      Count how many 110 voxels are present :  235819
+
+      Find the largest 110-component...
+             heap usage = 881324 Kbytes.
+             current max segment has 135845 voxels
+             removing small segments (less than 1 percent of maxarea).
+             heap usage = 765540 Kbytes.
+             removing small segments (less than 1 percent of maxarea).done
+      And identify it as the main brain basin...done
+      Main component: 135845 voxels
+      first estimation of the COG coord: x=127 y=102 z=112 r=86
+      first estimation of the main basin volume: 2699390 voxels
+      global maximum in x=152, y=88, z=71, Imax=255
+      CSF=21, WM_intensity=110, WM_VARIANCE=5
+      WM_MIN=110, WM_HALF_MIN=110, WM_HALF_MAX=110, WM_MAX=110 
+      preflooding height equal to 15 percent
+done.
+Analyze...
+
+      main basin size= 1582045 voxels, voxel volume =1.000 
+                     = 1582045 mmm3 = 1582.045 cm3
+done.
+PostAnalyze...
+      ***** 0 basin(s) merged in 1 iteration(s)
+      ***** 0 voxel(s) added to the main basin
+      ambiguous basin, non merged: 13 ambiguous voxels; size: 8030 voxels
+done.
+
+****************TEMPLATE DEFORMATION****************
+
+      second estimation of the COG coord: x=127,y=102, z=111, r=9860 iterations
+^^^^^^^^ couldn't find WM with original limits - expanding ^^^^^^
+
+   GLOBAL      CSF_MIN=0, CSF_intensity=7, CSF_MAX=26 , nb = 44864
+ Problem with the least square interpolation in GM_MIN calculation.
+   
+                     CSF_MAX  TRANSITION  GM_MIN  GM
+    GLOBAL     
+  before analyzing :    26,      48,        68,   85
+  after  analyzing :    26,      61,        68,   67
+      mri_strip_skull: done peeling brain
+      highly tesselated surface with 10242 vertices
+      matching...69 iterations
+
+*********************VALIDATION*********************
+curvature mean = -0.013, std = 0.010
+curvature mean = 69.603, std = 6.787
+
+Rigid alignment...
+      scanning 32.00 degree nbhd, min sse =  2.35 at ( 0.00,  0.00,  0.00)
+      scanning 16.00 degree nbhd, min sse =  2.14 at ( 4.00,  0.00,  4.00)
+      scanning  8.00 degree nbhd, min sse =  2.04 at (-2.00,  2.00, -2.00)
+      scanning  4.00 degree nbhd, min sse =  2.02 at ( 1.00,  0.00,  1.00)
+done
+      before rotation: sse = 2.35, sigma = 3.41
+      after  rotation: sse = 2.02, sigma = 3.02
+Localization of inacurate regions: Erosion-Dilation steps
+      the sse mean is  2.03, its var is  2.47   
+      before Erosion-Dilatation  0.03% of inacurate vertices
+      after  Erosion-Dilatation  0.00% of inacurate vertices
+      Validation of the shape of the surface done.
+Scaling of atlas fields onto current surface fields
+
+********FINAL ITERATIVE TEMPLATE DEFORMATION********
+Compute Local values csf/gray
+Fine Segmentation...48 iterations
+
+      mri_strip_skull: done peeling brain
+
+Brain Size = 1637270 voxels, voxel volume = 1.000 mm3
+           = 1637270 mmm3 = 1637.270 cm3
+
+      outer skin surface matching...141 iterations
+
+******************************
+Saving /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/watershed/ws
+done
+
+mne_convert_surface version 1.14 compiled at Feb  5 2014 04:21:13
+
+surf input file       : CH08_brain_surface
+surf output file      : CH08_brain_surface
+
+Triangle file : created by sheraz on Wed Feb  5 18:57:30 2014 nvert = 10242 ntri = 20480
+Read CH08_brain_surface (10242 vertices 20480 triangles)
+Reading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz...[done]
+Volume geometry information extracted from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Feb  5 2014 04:21:13
+
+surf input file       : CH08_inner_skull_surface
+surf output file      : CH08_inner_skull_surface
+
+Triangle file : created by sheraz on Wed Feb  5 18:57:30 2014 nvert = 10242 ntri = 20480
+Read CH08_inner_skull_surface (10242 vertices 20480 triangles)
+Reading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz...[done]
+Volume geometry information extracted from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Feb  5 2014 04:21:13
+
+surf input file       : CH08_outer_skull_surface
+surf output file      : CH08_outer_skull_surface
+
+Triangle file : created by sheraz on Wed Feb  5 19:02:24 2014 nvert = 10242 ntri = 20480
+Read CH08_outer_skull_surface (10242 vertices 20480 triangles)
+Reading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz...[done]
+Volume geometry information extracted from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_convert_surface version 1.14 compiled at Feb  5 2014 04:21:13
+
+surf input file       : CH08_outer_skin_surface
+surf output file      : CH08_outer_skin_surface
+
+Triangle file : created by sheraz on Wed Feb  5 19:02:24 2014 nvert = 10242 ntri = 20480
+Read CH08_outer_skin_surface (10242 vertices 20480 triangles)
+Reading /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz...[done]
+Volume geometry information extracted from /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+Did not ask to replace existing volume geometry
+
+mne_surf2bem version 1.8 compiled at Feb  5 2014 04:20:57
+
+input  file #   1 : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/watershed/CH08_outer_skin_surface / id = 4 / sigma N/A
+output file       : CH08-head.fif
+
+Triangle file : created by sheraz on Wed Feb  5 19:02:24 2014 nvert = 10242 ntri = 20480
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[61440 distances done]
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/watershed/CH08_outer_skin_surface read. id = 4
+
+Topology checks skipped.
+CH08-head.fif written.
+Created /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-head.fif
+
+Complete.
+
+
+ making symbolic links to  the surfaces
+
+
+generating the BEM geometry file in fif form
+
+Setting up the BEM with the following parameters:
+
+SUBJECTS_DIR       = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons
+Subject            = CH08
+Inner skull        = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/inner_skull.surf (5120 triangles)
+brain conductivity = 0.3 S/m
+Resulting BEM      = /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem.fif
+
+>> 1. Creating the BEM geometry file...
+
+mne_surf2bem version 1.8 compiled at Feb  5 2014 04:20:57
+
+input  file #   1 : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/inner_skull.surf / id = 1 / sigma = 0.3 S/m
+output file       : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem.fif
+
+Triangle file : created by sheraz on Wed Feb  5 18:57:30 2014 nvert = 10242 ntri = 20480
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[61440 distances done]
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/inner_skull.surf read. id = 1
+
+inner skull CM is   0.39 -17.08  26.94 mm
+Going from 5th to 4th subdivision of an icosahedron (ntri: 20480 -> 5120)
+
+inner skull CM is   0.40 -17.08  26.94 mm
+Surfaces passed the basic topology checks.
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem.fif written.
+
+>> 2. Creating FreeSurfer surface files of the actual surfaces...
+
+mne_list_bem version 1.9 compiled at Feb  5 2014 04:21:38
+
+input  file : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem.fif
+output file : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-inner_skull-5120.surf
+surface id  : 1
+output in FreeSurfer format.
+done.
+
+mne_convert_surface version 1.14 compiled at Feb  5 2014 04:21:13
+
+surf input file       : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-outer_skin-5120.surf
+surf output file      : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-inner_skull-5120.surf
+
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-outer_skin-5120.surf : No such file or directory
+
+>> 3. Calculating BEM geometry data (this takes several minutes)...
+
+
+mne_prepare_bem_model version 1.2 compiled at Feb  5 2014 04:17:32
+
+BEM surface file     : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem.fif
+Solution file        : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem-sol.fif
+Approximation method : linear collocation
+
+Loading surfaces...
+	Triangle normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[15360 distances done]
+Homogeneous model surface loaded.
+
+Computing the linear collocation solution...
+	Matrix coefficients...
+		inner skull (2562) -> inner skull (2562) ... [done]
+	Inverting the coefficient matrix...
+		LU factorization...
+		Compute inverse...
+Solution ready.
+Saving...
+Saved the result to /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem-sol.fif
+
+BEM geometry computations complete.
+
+The model /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-5120-bem-sol.fif is now ready for use
+Complete.
+
+
+Generating the high-res head surface tesselation
+
+INFO: log file is /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/scripts/mkheadsurf.log
+--------------------------------
+Wed Feb  5 19:03:01 EST 2014
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem
+mri_seghead --invol /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz --outvol /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/seghead.mgz --fill 255 --thresh1 20 --thresh2 20 --nhitsmin 2
+--------------------------------
+input volume:  /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/T1.mgz
+output volume: /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/seghead.mgz
+threshold1:    20
+threshold2:    20
+nhitsmin:      2
+fill value:    255
+Loading input volume
+Filling Columns
+Filling Rows
+Filling Slices
+Merging and Inverting
+Growing
+Counting
+N Head Voxels = 3761335
+N Back Voxels = 13015881
+Avg. Back Intensity = 3.098411
+Writing output
+Done
+--------------------------------
+Wed Feb  5 19:03:06 EST 2014
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem
+mri_tessellate /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/mri/seghead.mgz 255 /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead
+--------------------------------
+$Id: mri_tessellate.c,v 1.36 2011/03/02 00:04:25 nicks Exp $
+  $Id: mrisurf.c,v 1.693.2.7 2013/05/12 22:28:01 nicks Exp $
+slice 30: 2401 vertices, 2502 faces
+slice 40: 9936 vertices, 10114 faces
+slice 50: 19202 vertices, 19442 faces
+slice 60: 30016 vertices, 30338 faces
+slice 70: 43519 vertices, 43960 faces
+slice 80: 54730 vertices, 55213 faces
+slice 90: 64993 vertices, 65504 faces
+slice 100: 75474 vertices, 76065 faces
+slice 110: 86840 vertices, 87553 faces
+slice 120: 98186 vertices, 98922 faces
+slice 130: 108609 vertices, 109461 faces
+slice 140: 121159 vertices, 122252 faces
+slice 150: 132562 vertices, 133774 faces
+slice 160: 143152 vertices, 144485 faces
+slice 170: 153281 vertices, 154674 faces
+slice 180: 164109 vertices, 165654 faces
+slice 190: 178071 vertices, 179917 faces
+slice 200: 197604 vertices, 200070 faces
+slice 210: 214188 vertices, 216646 faces
+slice 220: 220644 vertices, 222849 faces
+slice 230: 221869 vertices, 224036 faces
+slice 240: 221932 vertices, 224082 faces
+slice 250: 221932 vertices, 224082 faces
+using the conformed surface RAS to save vertex points...
+writing /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead
+using vox2ras matrix:
+-1.000   0.000   0.000   128.000;
+ 0.000   0.000   1.000  -128.000;
+ 0.000  -1.000   0.000   128.000;
+ 0.000   0.000   0.000   1.000;
+--------------------------------
+Wed Feb  5 19:03:09 EST 2014
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem
+mris_smooth -n 10 -b area.seghead -c curv.seghead /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead
+--------------------------------
+smoothing for 10 iterations
+smoothing surface tessellation for 10 iterations...
+smoothing complete - recomputing first and second fundamental forms...
+writing smoothed curvature to /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.curv.seghead
+writing smoothed area to /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.area.seghead
+--------------------------------
+Wed Feb  5 19:03:29 EST 2014
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem
+mris_inflate -n 10 -sulc sulc.seghead /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead.inflated
+--------------------------------
+niterations = 10
+sulc name = sulc.seghead
+avg radius = 97.2 mm, total surface area = 135817 mm^2
+writing inflated surface to /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead.inflated
+writing sulcal depths to /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.sulc.seghead
+step 000: RMS=0.110 (target=0.015)   step 005: RMS=0.078 (target=0.015)   step 010: RMS=0.071 (target=0.015)   step 015: RMS=0.066 (target=0.015)   step 020: RMS=0.062 (target=0.015)   step 025: RMS=0.056 (target=0.015)   step 030: RMS=0.054 (target=0.015)   step 035: RMS=0.048 (target=0.015)   step 040: RMS=0.046 (target=0.015)   step 045: RMS=0.044 (target=0.015)   step 050: RMS=0.044 (target=0.015)   step 055: RMS=0.045 (target=0.015)   step 060: RMS=0.045 (target=0.015)   
+inflation complete.
+inflation took 1.1 minutes
+Started at: Wed Feb 5 19:03:01 EST 2014
+Ended   at: Wed Feb  5 19:04:36 EST 2014
+mkheadsurf done
+
+Generating the dense head model
+
+
+1. Creating a dense scalp tessellation with mkheadsurf...
+
+/autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead already there
+
+2. Creating /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-head-dense.fif...
+
+mne_surf2bem version 1.8 compiled at Feb  5 2014 04:20:57
+
+input  file #   1 : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/surf/lh.seghead / id = 4 / sigma N/A
+output file       : /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-head-dense.fif
+
+New quad file : nvert = 221932 nquad = 224082
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...Too many neighbors for vertex 87987.
+Failed to create /autofs/space/calvin_001/marvin/1/users/MRI/WMA/recons/CH08/bem/CH08-head-dense.fif, see above
+mv: cannot stat `CH08-head-dense.fif': No such file or directory
+
+Source space setup for CH08 is complete. You are now ready to proceed with the co-ordinate frame allignment
+

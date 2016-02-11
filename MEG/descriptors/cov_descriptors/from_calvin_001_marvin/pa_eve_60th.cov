@@ -1,0 +1,115 @@
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"cov for event analysis"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         058501_noisecov_eve.fif
+#	logfile         noisecov_eve
+#	eventfile	058501_fmm_1_0.1_144fil_raw-eve.fif
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+#	logfile          erm-ave.log
+	gradReject	1500e-13
+#	magReject	3e-12
+#	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	500e-15
+#
+#	Additional rejection parameters
+#
+#	eegReject   	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	
+
+	def {
+
+		name	"control60"
+
+		event	60
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control61"
+
+		event	61
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control62"
+
+		event	62
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control63"
+
+		event	63
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control64"
+
+		event	64
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control65"
+
+		event	65
+
+		
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+}

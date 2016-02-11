@@ -1,0 +1,103 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+
+#	fixSkew
+	logfile         pa_mmn-ave.log
+	gradReject	200e-12
+	magReject	3e-12
+	eogReject	200e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+
+
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+
+#
+	category {
+
+		name	"control70"
+
+		event	70
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	
+	category {
+
+		name	"control71"
+
+		event	71
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"control72"
+
+		event	72
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"control73"
+
+		event	73
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"control74"
+
+		event	74
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+	category {
+
+		name	"control75"
+
+		event	75
+
+		ignore	0
+		tmin	-0.1
+		tmax	0.6
+
+		bmin    -0.1
+		bmax    0
+	}
+}

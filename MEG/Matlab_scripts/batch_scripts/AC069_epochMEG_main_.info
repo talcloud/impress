@@ -1,0 +1,34 @@
+Starting Specified Actions AC069
+Starting epochMEG AC069
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr_merg.ave 
+Starting Specified Actions AC069
+Starting epochMEG AC069
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',66,1)">66  </a>if ~isfield(cfg,'epochMEG_event_order'),
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',70,1)">70  </a>if isfield(cfg,'epochMEG_merge_events'),
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',71,1)">71  </a>cfg.epochMEG_event_order=cfg.newevents;   
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',72,1)">72  </a>logfile=strcat(cfg.protocol_avedir,'/',cfg.protocol,'_merg.ave');
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',79,1)">79  </a>if ~isfield(cfg,'epochMEG_time')
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',81,1)">81  </a>fprintf(1,'Parsing logfile: %s \n',logfile)
+dbstep
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr_merg.ave 
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',82,1)">82  </a>read=0;
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',83,1)">83  </a>cfg.tminvalue=zeros(1,length(cfg.epochMEG_event_order));
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+Starting Specified Actions AC069
+Starting epochMEG AC069
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr_merg.ave 
+Starting Specified Actions AC069
+Starting epochMEG AC069
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr_merg.ave 

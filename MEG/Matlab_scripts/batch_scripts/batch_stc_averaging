@@ -1,0 +1,109 @@
+
+
+%% Subjects
+ subject={  'AC013'; '018301';
+     '010401';
+     '010001';
+
+'017801';
+
+
+
+
+'041901';
+'042201';
+'042301';
+'015402';
+'015601';
+'051301';
+'009101';
+'012002';
+
+
+
+'pilotei';
+
+
+
+'007501';
+'013001';
+'038301';
+'038502';
+'040701';
+'042401';
+
+'051901';
+
+
+'AC003';
+
+
+
+
+'AC023';
+
+'AC046';
+'AC047';
+'AC056';
+
+'AC053';
+'AC058';
+'AC061';
+
+'ac047';
+
+'AC067';
+
+
+'AC054';
+
+'AC064';
+
+'AC068';
+'AC071';
+
+'AC070';
+'AC072';
+'AC073';
+'AC075';
+
+'AC0066';
+
+
+'AC076';
+'AC077';'AC042';'AC069';'014002';'018301';'014901';'012301';'014001';'AC050';'AC063';'AC065';'043202';'012301';'002901';'050901'};
+
+%% STC averaging
+visitNo=[ones(44,1);2;2;2;2;2;2;2;2;1;3;2;1];
+counter=1;
+erm_run=ones(59,1);
+run=ones(70,1);
+
+matlabpool 8
+%for i=1:length(subject)
+parfor i=1:length(subject);
+
+    try
+% cding into directory        
+data_subjdir=[cfg.data_rootdir '/' subject{i} '/' num2str(visitNo(i)) '/'];
+cd(data_subjdir)
+set=[1;2];
+for t=1:2
+command = ['mne_make_movie  --subject ' subject{i}  ' --inv  ' subject{i},'_tacr_0.1_144_fil_fixed_new_erm_megreg_0_new_MNE_proj-inv.fif'...
+    ' --meas   ' ,subject{i},'_tacr_1_2_20fil-merge-ave.fif', ' --smooth 5 '...
+    '  --set   ',num2str(set(t)),' --spm   '  '  --stc  ', strcat(cfg.data_rootdir,'/','stc_merge','/',subject{i},'_2_20fil-merge-ave-set-',num2str(set(t)))];
+
+    [st] = unix(command);
+end
+    catch
+
+    fprintf('Subject Failed ! %s\n',subject{i});
+  
+    continue
+
+
+    end
+
+end
+matlabpool close
+

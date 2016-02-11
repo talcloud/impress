@@ -1,0 +1,89 @@
+#
+#	This is an example of a description file for covariance matrix computation
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"GABORS"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+	outfile       5HTT_run2-cov.fif
+	logfile        5HTT_run2-cov.log
+	eventfile	  5HTT_run2.eve
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	stimIgnore      10e-3
+	gradReject	3000e-13
+	magReject	10e-12
+#	eogReject	150e-6
+#
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	def {
+#
+#		The name of the category (condition) is irrelevant 
+#		but useful as a comment
+#
+		name	"Houses"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+#		'event' can be left out to compute covariance matrix 
+#		from continuous data
+#
+		event	1
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+		tmin	-0.2
+		tmax	0
+#
+#		Baseline settings is strongly recommended
+#		(does not have to be the same as 'tmin' and 'tmax')
+#
+		bmin    -0.2
+		bmax    -0.02
+	}
+	def {
+		name	"Fearful Faces"
+		event	2
+		tmin	-0.2
+		tmax	0
+		
+	}
+	def {
+		name	"Neutral Faces"
+		event	3
+		ignore	0
+		tmin	-0.2
+		tmax	0
+	
+	}
+
+def {
+		name	"Angry Faces"
+		event	4
+		ignore	0
+		tmin	-0.2
+		tmax	0
+	
+	}
+
+
+
+}

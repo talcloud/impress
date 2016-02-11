@@ -1,0 +1,13 @@
+
+mne_process_raw version 2.23 compiled at Sep 12 2009 10:51:42
+64-bit architecture. Using 2000.00 Mbytes for ring buffers
+
+--- Setting up the filter ---
+
+Using a 4096-point FFT in filtering of raw data with 2048-sample tapers
+bandpass =    0.0 (   0.0) ...   40.0 (   5.0) Hz
+filter is off
+
+--- Opening pa01a_mmn_1_0.5_40fil_raw.fif ---
+
+pa01a_mmn_1_0.5_40fil_raw.fif : No such file or directory

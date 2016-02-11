@@ -1,0 +1,13 @@
+
+mne_process_raw version 2.28 compiled at Dec 15 2009 08:56:37
+64-bit architecture. Using 2000.00 Mbytes for ring buffers
+
+--- Setting up the filter ---
+
+Using a 4096-point FFT in filtering of raw data with 2048-sample tapers
+bandpass =    0.0 (   0.0) ...   40.0 (   5.0) Hz
+filter is off
+
+--- Opening AC002_emo1_1_ecgClean_raw.fif ---
+
+AC002_emo1_1_ecgClean_raw.fif : No such file or directory

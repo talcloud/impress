@@ -1,0 +1,61 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile         rs-ave.log
+	gradReject	1000e-13
+	magReject	3e-12
+#	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	1000e-15
+
+#	Additional rejection parameters
+#
+#	eegReject	20e-6
+#	ecgReject	10e-3
+#
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Fix20sec"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	996
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin 0
+		tmax 2
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+#		bmin    -0.3
+#		bmax     0
+	}
+	
+}

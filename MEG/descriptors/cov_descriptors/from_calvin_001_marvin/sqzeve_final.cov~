@@ -1,0 +1,109 @@
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"cov for event analysis"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         058501_noisecov_eve.fif
+#	logfile         noisecov_eve
+#	eventfile	058501_fmm_1_0.1_144fil_raw-eve.fif
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+#	logfile         sqz_erm-ave.log
+	gradReject	2000e-13
+#	magReject	4.4e-12
+#	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	500e-15
+#
+#	Additional rejection parameters
+#
+#	eegReject   	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	def {
+#
+#		The name of the category (condition) is irrelevant 
+#		but useful as a comment
+
+		name	"SQZ_trigger"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	1
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.5
+		tmax	1.5
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.5
+		bmax    -0.4
+        } 
+#                
+       def {
+		name	"SQZ_onset"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	501
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.5
+		tmax	1.5
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.5
+		bmax    -0.4
+        }
+
+       def {
+
+#
+		name	"SQZ_offset"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	502
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin   -0.5
+		tmax	1.5
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.5
+		bmax    -0.4
+
+	}
+
+	
+}

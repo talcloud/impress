@@ -1,0 +1,300 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      --><title>do_calc_forward</title><meta name="generator" content="MATLAB 7.9"><meta name="date" content="2011-12-06"><meta name="m-file" content="do_calc_forward"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Error Check</a></li><li><a href="#3">Global Variables</a></li><li><a href="#4">Calculating Forward Operator</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> [cfg]=do_calc_forward(subj,visitNo,run,cfg)
+</pre><h2>Error Check<a name="2"></a></h2><pre class="codeinput"><span class="keyword">if</span> isfield(cfg,<span class="string">'error_mode'</span>)
+
+   file= exist(strcat(subj,<span class="string">'_do_calc_forward_error_cfg.mat'</span>),<span class="string">'file'</span>);
+           <span class="keyword">if</span> file~=2
+               <span class="keyword">return</span>
+           <span class="keyword">else</span>
+               delete(file);
+           <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Input argument "cfg" is undefined.
+
+Error in ==&gt; do_calc_forward at 3
+if isfield(cfg,'error_mode')
+</pre><h2>Global Variables<a name="3"></a></h2><pre class="codeinput"><span class="keyword">if</span> ~isfield(cfg,<span class="string">'data_rootdir'</span>),
+error(<span class="string">'Please enter a root directory in sub-structure cfg.data_rootdir: Thank you'</span>);
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> ~isfield(cfg,<span class="string">'protocol'</span>),
+ error(<span class="string">'Please enter a protocol name in sub-structure cfg.protocol: Thank you'</span>);
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> ~isfield(cfg,<span class="string">'erm_rootdir'</span>),
+ error(<span class="string">'Please enter a root directory in sub-structure cfg.erm_rootdir: Thank you'</span>);
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> ~isfield(cfg,<span class="string">'frame_tag_checker_off'</span>)
+    <span class="keyword">if</span> ~isfield(cfg,<span class="string">'frame_tag'</span>)
+    (<span class="string">'The forward operator checks to see whether cHPIs are viable. If you would like to turn this feature off, please set cfg.frame_tag_checker_off=[]: Thank you'</span>);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+data_subjdir=[cfg.data_rootdir <span class="string">'/'</span> subj <span class="string">'/'</span> num2str(visitNo) <span class="string">'/'</span>];
+cd(data_subjdir) <span class="comment">% cd to the fif dir</span>
+</pre><h2>Calculating Forward Operator<a name="4"></a></h2><pre class="codeinput"><span class="comment">% If re-running after error, make sure to clear cfg.forward_spacing,</span>
+<span class="comment">% otherwise command will be in error</span>
+
+diary(strcat(subj,<span class="string">'_calc_forward.info'</span>));
+diary <span class="string">on</span>
+
+
+cfg.forward_mri_tag=[<span class="string">' --mri '</span> cfg.erm_rootdir,<span class="string">'/'</span>,subj,<span class="string">'/'</span>,num2str(visitNo),<span class="string">'/'</span>, subj <span class="string">'_1-trans.fif  '</span>];
+
+<span class="keyword">if</span> ~isfield(cfg,<span class="string">'forward_spacing'</span>),
+
+    cfg.forward_spacing=<span class="string">' ico-5 '</span>;
+<span class="keyword">else</span>
+    cfg.forward_spacing=strcat(<span class="string">' ico-'</span>,cfg.forward_spacing);
+
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> isfield(cfg,<span class="string">'frame_tag_checker_off'</span>)
+
+    fprintf(<span class="string">'you have instructed the function not to check if cHPIs are valid for the runs before proceeding'</span>);
+
+<span class="keyword">if</span> ~isfield(cfg,<span class="string">'start_run_from'</span>)
+cfg.start_run_from=1;
+<span class="keyword">end</span>
+
+    <span class="keyword">for</span> irun=cfg.start_run_from:run
+     cfg.frame_forward_tag{irun}=<span class="string">'empty value'</span>;
+
+   <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> irun=cfg.start_run_from:run,
+   <span class="keyword">if</span> ~isfield(cfg,<span class="string">'frame_tag_checker_off'</span>)
+    I=strcmp(<span class="string">' -frame device -origin 0 13 -6 '</span>, cfg.frame_tag{irun});
+   <span class="keyword">else</span>
+    I=strcmp(<span class="string">' -frame device -origin 0 13 -6 '</span>, cfg.frame_forward_tag{irun});
+   <span class="keyword">end</span>
+    <span class="keyword">if</span> I ==1,
+
+        fprintf(<span class="string">'HPI is bad for this run, %d, Checking another run if available %d\n'</span>,irun);
+
+      <span class="keyword">continue</span>
+    <span class="keyword">else</span>
+            cfg.forward.in_fif{irun} = strcat(subj,<span class="string">'_'</span>,cfg.protocol,<span class="string">'_'</span>,num2str(irun),<span class="string">'_raw.fif '</span>);
+            cfg.forward.in_fif{irun} =[data_subjdir cfg.forward.in_fif{irun}];
+            cfg.forward_fif{irun} = strcat(subj,<span class="string">'_'</span>,cfg.protocol,<span class="string">'_'</span>,num2str(irun),<span class="string">'-fwd.fif '</span>);
+            cfg.forward_fif{irun} =[data_subjdir cfg.forward_fif{irun}];
+
+
+
+            command=[<span class="string">'mne_do_forward_solution --meas '</span>  cfg.forward.in_fif{irun} <span class="string">' --megonly --overwrite --spacing '</span> cfg.forward_spacing, cfg.forward_mri_tag  <span class="string">'  --subject  '</span> subj <span class="string">' --fwd  '</span> cfg.forward_fif{irun} <span class="string">' -v &gt;&amp; calc-forward_'</span>,num2str(irun),<span class="string">'.log'</span> ];
+
+
+            [st,w] = unix(command);
+            fprintf(1,<span class="string">'\n Command executed: %s \n'</span>,command);
+            fprintf(1,<span class="string">'\n Run: %d\n'</span>, irun);
+
+
+                        <span class="keyword">if</span> st ~=0
+                         w
+                        warning(<span class="string">'check Forward step'</span>);
+                        fprintf(1,<span class="string">'\n Error with Forward operator! Run: %d\n'</span>, irun);
+                        <span class="keyword">elseif</span> st==0 &amp;&amp; isfield(cfg,<span class="string">'single_forward_operator'</span>)
+                                <span class="keyword">break</span>
+                        <span class="keyword">else</span>
+                        <span class="keyword">continue</span>
+                        <span class="keyword">end</span>
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+
+filename=strcat(subj,<span class="string">'_'</span>,num2str(visitNo),<span class="string">'_calc_forward_cfg'</span>);
+save(filename,<span class="string">'cfg'</span>,<span class="string">'visitNo'</span>,<span class="string">'run'</span>,<span class="string">'subj'</span>);
+
+diary <span class="string">off</span>
+
+        filename=strcat(subj,<span class="string">'_do_calc_forward_cfg'</span>);
+        save(filename,<span class="string">'cfg'</span>,<span class="string">'visitNo'</span>,<span class="string">'run'</span>,<span class="string">'subj'</span>);
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.9<br></p></div><!--
+##### SOURCE BEGIN #####
+function [cfg]=do_calc_forward(subj,visitNo,run,cfg)
+  %% Error Check
+if isfield(cfg,'error_mode')
+    
+   file= exist(strcat(subj,'_do_calc_forward_error_cfg.mat'),'file');
+           if file~=2
+               return
+           else
+               delete(file);
+           end    
+end
+
+%% Global Variables
+
+
+if ~isfield(cfg,'data_rootdir'),
+error('Please enter a root directory in sub-structure cfg.data_rootdir: Thank you');
+end
+
+if ~isfield(cfg,'protocol'),
+ error('Please enter a protocol name in sub-structure cfg.protocol: Thank you');
+end
+
+if ~isfield(cfg,'erm_rootdir'),
+ error('Please enter a root directory in sub-structure cfg.erm_rootdir: Thank you');
+end
+
+if ~isfield(cfg,'frame_tag_checker_off')
+    if ~isfield(cfg,'frame_tag')
+    ('The forward operator checks to see whether cHPIs are viable. If you would like to turn this feature off, please set cfg.frame_tag_checker_off=[]: Thank you');
+    end
+end
+data_subjdir=[cfg.data_rootdir '/' subj '/' num2str(visitNo) '/'];
+cd(data_subjdir) % cd to the fif dir
+
+
+%% Calculating Forward Operator
+
+% If re-running after error, make sure to clear cfg.forward_spacing,
+% otherwise command will be in error
+
+diary(strcat(subj,'_calc_forward.info'));
+diary on
+
+
+cfg.forward_mri_tag=[' REPLACE_WITH_DASH_DASHmri ' cfg.erm_rootdir,'/',subj,'/',num2str(visitNo),'/', subj '_1-trans.fif  '];
+
+if ~isfield(cfg,'forward_spacing'),
+    
+    cfg.forward_spacing=' ico-5 ';
+else
+    cfg.forward_spacing=strcat(' ico-',cfg.forward_spacing);
+    
+end    
+
+if isfield(cfg,'frame_tag_checker_off')
+            
+    fprintf('you have instructed the function not to check if cHPIs are valid for the runs before proceeding'); 
+
+if ~isfield(cfg,'start_run_from')
+cfg.start_run_from=1;
+end 
+    
+    for irun=cfg.start_run_from:run
+     cfg.frame_forward_tag{irun}='empty value';
+   
+   end
+       
+end
+
+for irun=cfg.start_run_from:run,
+   if ~isfield(cfg,'frame_tag_checker_off') 
+    I=strcmp(' -frame device -origin 0 13 -6 ', cfg.frame_tag{irun});
+   else
+    I=strcmp(' -frame device -origin 0 13 -6 ', cfg.frame_forward_tag{irun});
+   end 
+    if I ==1, 
+        
+        fprintf('HPI is bad for this run, %d, Checking another run if available %d\n',irun); 
+
+      continue
+    else
+            cfg.forward.in_fif{irun} = strcat(subj,'_',cfg.protocol,'_',num2str(irun),'_raw.fif ');
+            cfg.forward.in_fif{irun} =[data_subjdir cfg.forward.in_fif{irun}];
+            cfg.forward_fif{irun} = strcat(subj,'_',cfg.protocol,'_',num2str(irun),'-fwd.fif ');
+            cfg.forward_fif{irun} =[data_subjdir cfg.forward_fif{irun}];
+
+
+            
+            command=['mne_do_forward_solution REPLACE_WITH_DASH_DASHmeas '  cfg.forward.in_fif{irun} ' REPLACE_WITH_DASH_DASHmegonly REPLACE_WITH_DASH_DASHoverwrite REPLACE_WITH_DASH_DASHspacing ' cfg.forward_spacing, cfg.forward_mri_tag  '  REPLACE_WITH_DASH_DASHsubject  ' subj ' REPLACE_WITH_DASH_DASHfwd  ' cfg.forward_fif{irun} ' -v >& calc-forward_',num2str(irun),'.log' ];
+
+  
+            [st,w] = unix(command);
+            fprintf(1,'\n Command executed: %s \n',command);
+            fprintf(1,'\n Run: %d\n', irun);  
+           
+
+                        if st ~=0
+                         w
+                        warning('check Forward step');
+                        fprintf(1,'\n Error with Forward operator! Run: %d\n', irun); 
+                        elseif st==0 && isfield(cfg,'single_forward_operator')
+                                break
+                        else
+                        continue
+                        end
+                           
+    end
+end
+
+
+filename=strcat(subj,'_',num2str(visitNo),'_calc_forward_cfg');
+save(filename,'cfg','visitNo','run','subj');
+
+diary off        
+
+        filename=strcat(subj,'_do_calc_forward_cfg');
+        save(filename,'cfg','visitNo','run','subj');
+##### SOURCE END #####
+--></body></html>

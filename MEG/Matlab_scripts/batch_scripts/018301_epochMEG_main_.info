@@ -1,0 +1,69 @@
+Starting Specified Actions 018301
+Starting epochMEG 018301
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+Subject Failed ! 018301
+batch_preprocessing_script_tacrvib
+Processing single subject 018301
+Not Performing do_erm_and_data_sss_main 018301
+Not Performing do_mne_preproc_main 018301
+Not Performing do_calc_forward_inverse_main 018301
+Performing do_epochMEG_main 018301
+Starting Specified Actions 018301
+Starting epochMEG 018301
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',66,1)">66  </a>if ~isfield(cfg,'epochMEG_event_order'),
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',70,1)">70  </a>if isfield(cfg,'epochMEG_merge_events'),
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',71,1)">71  </a>cfg.epochMEG_event_order=cfg.newevents;   
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',72,1)">72  </a>logfile=strcat(cfg.protocol_avedir,'/',cfg.protocol,'_merg.ave');
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',79,1)">79  </a>if ~isfield(cfg,'epochMEG_time')
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',81,1)">81  </a>fprintf(1,'Parsing logfile: %s \n',logfile)
+dbstep
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacrvib_merg.ave 
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',82,1)">82  </a>read=0;
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',83,1)">83  </a>cfg.tminvalue=zeros(1,length(cfg.epochMEG_event_order));
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',84,1)">84  </a>cfg.tmaxvalue=zeros(1,length(cfg.epochMEG_event_order));
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',85,1)">85  </a>cfg.bminvalue=zeros(1,length(cfg.epochMEG_event_order));
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',86,1)">86  </a>cfg.bmaxvalue=zeros(1,length(cfg.epochMEG_event_order));
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',87,1)">87  </a> for i=1:length(cfg.epochMEG_event_order)
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',89,1)">89  </a>fid = fopen(logfile,'r');
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',90,1)">90  </a>pat2='\s+';
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',95,1)">95  </a>    while(1)
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',98,1)">98  </a>    dline = fgetl(fid);
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',99,1)">99  </a>    if(dline == -1)
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',103,1)">103 </a>    res = regexp(dline,pat2,'split');
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',107,1)">107 </a>        e=strcmp(res,'event');
+dbstep
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',108,1)">108 </a>        particular_event=num2str(cfg.epochMEG_event_order(i));
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+clear all
+batch_preprocessing_script_tacrvib
+Processing single subject 018301
+Not Performing do_erm_and_data_sss_main 018301
+Performing do_mne_preproc_main 018301
+Subject Failed ! 018301
+clear all
+batch_preprocessing_script_tacrvib
+Processing single subject 018301
+Not Performing do_erm_and_data_sss_main 018301
+Performing do_mne_preproc_main 018301

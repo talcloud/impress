@@ -1,0 +1,258 @@
+#
+#	This is an example of a description file for averaging
+#	
+#	Lines beginning with '#' are comments
+#
+average {
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+	logfile         tac-r-merged-ave.log
+	gradReject	1900e-13
+	magReject	4e-12
+#	eogReject	220e-6
+    magFlat         1e-14
+	gradflat	500e-15
+#	emgReject?
+#
+#	Additional rejection parameters
+#
+#	eegReject?
+
+#	The first category follows
+#	
+#	'condition' can be used instead of 'category'
+#
+
+
+#category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+#		name	"No Vibration"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+#		event	13  
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+#		ignore	0
+#		tmin	-1
+#		tmax	1
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+#		bmin    -0.2
+#		bmax    0.4
+#	}
+
+
+
+
+
+
+
+
+
+category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+
+		name	"long"
+
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+
+		event	97
+
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.3
+		bmax    0
+	}
+
+category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+
+		name	"short"
+
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+
+		event	96
+
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+
+#		Standard error of mean is computed only
+#		if baseline settings are present
+
+		bmin    -0.3
+		bmax    0
+	}
+
+category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+
+		name	"short long"
+
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+
+		event	98
+
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.3
+		bmax    0
+	}
+
+	category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+
+		name	"short AB"
+
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+
+		event	1
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+
+#		Standard error of mean is computed only
+#		if baseline settings are present
+
+		bmin    -0.3
+		bmax    0
+	}
+	category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Long AB"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	2
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.3
+		bmax    0
+	}
+	category {
+#
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Short BA"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	4
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.3
+		bmax    0
+	}
+
+category {
+
+#		The name of the category (condition) to appear 
+#		in the output file
+#
+		name	"Long BA"
+#
+#		Trigger line transition from 0 -> 'event' defines 
+#		the zero time point
+#
+		event	5
+#
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+		ignore	0
+		tmin	-0.5
+		tmax	2.3
+#
+#		Standard error of mean is computed only
+#		if baseline settings are present
+#
+		bmin    -0.3
+		bmax    0
+	}
+
+
+
+
+}
+

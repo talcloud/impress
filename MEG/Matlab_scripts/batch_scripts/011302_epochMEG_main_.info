@@ -1,0 +1,13 @@
+Starting Specified Actions 011302
+Starting epochMEG 011302
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/ass.ave 
+Subject Failed ! 011302
+clear all
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+batch_preprocessing_script_ass
+Processing single subject 011302
+Performing do_erm_and_data_sss_main 011302

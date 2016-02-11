@@ -1,0 +1,135 @@
+#	
+#	Lines beginning with '#' are comments
+#
+cov {
+#	name 		"cov for event analysis"
+#
+#	Output files
+#	The log file is useful for debugging and
+#	selection of interesting events using 'eventfile'
+#
+#	outfile         058501_noisecov_eve.fif
+#	logfile         noisecov_eve
+#	eventfile	058501_fmm_1_0.1_144fil_raw-eve.fif
+#
+#	Rejection limits
+#
+#	stimIgnore is optional to omit a stimulus artefact from 
+#	the rejection
+#
+#	fixSkew
+#	logfile          erm-ave.log
+	gradReject	1500e-13
+#	magReject	3e-12
+#	eogReject	220e-6
+        magFlat         1e-14
+	gradflat	500e-15
+#
+#	Additional rejection parameters
+#
+#	eegReject   	20e-6
+#	ecgReject	10e-3
+#
+#	The first definition follows
+#
+	def {
+#
+#		The name of the category (condition) is irrelevant 
+#		but useful as a comment
+
+                name	"Standard10"
+
+#		'event' can be left out to compute covariance matrix 
+#		from continuous data
+
+                event  10
+
+#		'ignore' is a mask to apply to the trigger line
+#		before searching for 'event' (default = 0)
+#
+
+		tmin	 -0.1     
+		tmax	 0.6
+                bmin     -0.1
+                bmax     0
+        } 
+	def {
+
+                name	"Standard11"
+
+                event  11
+
+		tmin	 -0.1     
+		tmax	 0.6
+                bmin     -0.1
+                bmax     0
+        } 
+
+	
+	def {
+
+		name	"control70"
+
+		event	70
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control71"
+
+		event	71
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control72"
+
+		event	72
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control73"
+
+		event	73
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control74"
+
+		event	74
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+	def {
+
+		name	"control75"
+
+		event	75
+
+		tmin	-0.1
+		tmax	0.6
+		bmin    -0.1
+		bmax    0
+	}
+}

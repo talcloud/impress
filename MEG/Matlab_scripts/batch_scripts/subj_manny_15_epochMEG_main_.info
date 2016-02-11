@@ -1,0 +1,288 @@
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 
+Subject Failed ! subj_manny_15
+batch_preprocessing_script_tacr_faster
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+    no_projector_application_on_erm: []
+
+Processing single subject subj_manny_15
+Not Performing do_erm_and_data_sss_main subj_manny_15
+Not Performing do_mne_preproc_main subj_manny_15
+Not Performing do_calc_forward_inverse_main subj_manny_15
+Performing do_epochMEG_main subj_manny_15
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',55,1)">55  </a>if isfield(cfg,'error_mode')
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+logfile
+
+logfile =
+
+/cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+Subject Failed ! subj_manny_15
+batch_preprocessing_script_tacr_faster
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+    no_projector_application_on_erm: []
+
+Processing single subject subj_manny_15
+Not Performing do_erm_and_data_sss_main subj_manny_15
+Not Performing do_mne_preproc_main subj_manny_15
+Not Performing do_calc_forward_inverse_main subj_manny_15
+Performing do_epochMEG_main subj_manny_15
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',87,1)">87  </a> for i=1:length(cfg.epochMEG_event_order)
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+clear all
+batch_preprocessing_script_tacr_faster
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+
+
+cfg = 
+
+                           protocol: 'tacr'
+                             covdir: [1x81 char]
+                    protocol_avedir: [1x74 char]
+                       data_rootdir: '/cluster/transcend/MEG/tacr'
+                        erm_rootdir: '/autofs/space/amiga_001/users/meg/erm1'
+                          setMRIdir: '/space/sondre/1/users/mri/mit/recon'
+           do_erm_and_data_sss_main: []
+                      do_sss_hpifit: []
+       do_sss_movementcomp_combined: []
+                do_mne_preproc_main: []
+           do_mne_preproc_heartbeat: []
+               do_erm_filtering_mne: []
+        do_erm_noise_covariance_mne: []
+            do_mne_preproc_filtered: []
+       do_calc_forward_inverse_main: []
+              frame_tag_checker_off: []
+                   mne_preproc_filt: [1x1 struct]
+                               filt: [1x1 struct]
+            perform_sensitivity_map: []
+                     ecg_mag_number: 1
+                            erm_sss: 1
+                     erm_decimation: 1
+                  no_erm_decimation: 1
+                      make_png_only: []
+                      removeECG_EOG: 2
+                         device_fit: []
+                  epoch_folder_name: 'event_13_pt5_144_manny'
+          grand_avg_manual_filename: 'merge13'
+            without_movement_option: []
+     use_specific_file_for_epoching: [1x1 struct]
+    epochMEG_cond_number_manual_set: 1
+                          frame_tag: {[0 13 -6]}
+    no_projector_application_on_erm: []
+
+Processing single subject subj_manny_15
+Not Performing do_erm_and_data_sss_main subj_manny_15
+Not Performing do_mne_preproc_main subj_manny_15
+Not Performing do_calc_forward_inverse_main subj_manny_15
+Performing do_epochMEG_main subj_manny_15
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 
+<a href="matlab: opentoline('/autofs/cluster/transcend/scripts/MEG/Matlab_scripts/core_scripts/do_epochMEG.m',176,1)">176 </a>if ~isfield(cfg,'data_rootdir'),
+if system_dependent('IsDebugMode')==1, dbcont; end
+Starting Specified Actions subj_manny_15
+Starting epochMEG subj_manny_15
+Parsing logfile: /cluster/transcend/scripts/MEG/descriptors/ave_descriptors/from_marvin_001/tacr.ave 

@@ -1,0 +1,43 @@
+usage: /space/orsay/8/megdev/megsw-dev/mne/bin/mne/x86_64-unknown-linux-gnu/mne_process_raw [options]
+Process raw data files.
+	--cd dir                  change the initial working directory.
+	--raw name                input file name.
+	--grad number             desired software gradient compensation.
+	--events name             read event list from here
+	--eventsout name          save event list here
+	--allevents               save all trigger line transitions instead of just the raising edges.
+	--proj name               projection data file name.
+	--projon                  apply SSP to the data.
+	--projoff                 do not apply SSP to the data.
+	--makeproj                create a new projection operator from the data (--proj will be discarded).
+	--projevent no            which event to look for in projector creation (default: use raw data in the time range given)
+	--projtmin time/s         start time for projection operator calculation (default = use all data).
+	--projtmax time/s         end time for projection operator calculation (default = use all data).
+	--projngrad value         how many components to use for planar gradiometers (default = 5)
+	--projnmag  value         how many components to use for magnetometers / axial gradiometers (default = 8)
+	--projgradrej value/fT/cm rejection limit for planar gradiometers in projection calculation (default = 2000.0 fT/cm)
+	--projmagrej value/fT     rejection limit magnetometers / axial gradiometers in projection calculation (default = 3000.0 fT)
+	--saveprojtag name        use this as a tag for the projection operator output files (--makeproj will be implied).
+	--saveprojaug             save the projection augmented with zeros for compatibility with graph.
+	--filtersize size         desired filter length (default = 4096)
+	--highpass val/Hz         highpass corner (default =    0.0 Hz)
+	--lowpass  val/Hz         lowpass  corner (default =   40.0 Hz)
+	--highpassw val/Hz        highpass transition width (default =    0.0 Hz)
+	--lowpassw val/Hz         lowpass transition width (default =    5.0 Hz)
+	--filteroff               do not filter the data
+	--save name               Destination for saving filtered raw data
+	--anon                    Omit subject info from the output
+	--decim factor            Decimation factor for saving
+	--split size/MB           Split the output file chunks of this many megabytes
+	--ave name                Definition for averaging
+	--saveavetag name         Use this as a tag for the average output files.
+	--gave name               Name of the grand average file.
+	--cov name                Definition for covariance matrix calculation
+	--savecovtag name         Use this as a tag for the covariance matrix output files.
+	--gcov name               Name of the grand average covariance matrix file.
+	--savehere                Save the files with automatically generated files here instead of the directory of the corresponding raw data
+	--digtrig name            digital trigger channel name
+	--digtrigmask value       mask to apply to the digital trigger channel
+	--help                    print this info.
+	--version                 print version info.
+

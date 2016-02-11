@@ -1,0 +1,47 @@
+average {
+#name "PsR PsL AsR AsL"
+
+#outfile 
+logfile 5HTT_bas_run3.log
+eventfile 5HTT_run3-bas.eve
+
+stimIgnore -1
+gradReject 3000e-13
+magReject 10e-12
+eogReject -1
+eegReject -1
+ecgReject -1
+
+condition {
+name "Houses"
+event 1
+ignore 0
+tmin -0.2
+tmax 0
+}
+
+condition {
+name "Fearful Faces"
+event 2
+ignore 0
+tmin -0.2
+tmax 0
+}
+
+condition {
+name "Neutral Faces"
+event 3
+ignore 0
+tmin -0.2
+tmax 0
+}
+
+condition {
+name "Angry Faces"
+event 4
+ignore 0
+tmin -0.2
+tmax 0
+}
+
+}
