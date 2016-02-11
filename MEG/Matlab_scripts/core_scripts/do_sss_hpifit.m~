@@ -11,7 +11,7 @@ function [cfg]= do_sss_hpifit(subj,visitNo,run,cfg)
 %   3) run = run number
 %   4) cfg = data structure with global variables
 %   5) cfg.start_run_from // if set, with multiple runs, will start sss from that run. For example, cfg.start_run_from=2, function will begin from run 2
-%Testing for GIT
+
 % Output: cfg.frame_tag
 
 % Output: cfg.movecomp_tag
